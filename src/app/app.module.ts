@@ -6,9 +6,10 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from './material/material.module';
+import { ComponentListComponent } from './page/component-list/component-list.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, ComponentListComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
