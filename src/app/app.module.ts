@@ -11,6 +11,7 @@ import { ComponentListComponent } from './page/component-list/component-list.com
 import { RowComponent } from './component/row/row.component';
 import { ColumnComponent } from './component/column/column.component';
 import { InputTextComponent } from './component/input-text/input-text.component';
+import { ButtonComponent } from './component/button/button.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { InputTextComponent } from './component/input-text/input-text.component'
     RowComponent,
     ColumnComponent,
     InputTextComponent,
+    ButtonComponent,
   ],
   imports: [
     BrowserModule,
