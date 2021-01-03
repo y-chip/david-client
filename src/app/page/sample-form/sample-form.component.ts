@@ -19,4 +19,10 @@ export class SampleFormComponent implements OnInit {
       .get()
       .subscribe((sampleForm) => (this.sampleForm = sampleForm));
   }
+
+  save(): void {
+    this.sampleFormService
+      .post(this.sampleForm)
+      .subscribe((sampleForm) => (this.sampleForm = sampleForm));
+  }
 }
