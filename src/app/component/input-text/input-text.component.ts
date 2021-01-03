@@ -1,4 +1,4 @@
-import {Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -15,7 +15,7 @@ export class InputTextComponent implements OnInit {
 
   @Input() value!: string;
 
-  @Output() valueChange = new EventEmitter();
+  @Output() valueChange = new EventEmitter<string>();
 
   constructor() {}
 
@@ -32,5 +32,10 @@ export class InputTextComponent implements OnInit {
     if (this.value == null) {
       throw new Error('[value] is required');
     }
+  }
+
+  inputEvent(value: string): void {
+    this.value = value;
+    this.valueChange.emit(value);
   }
 }

@@ -1,4 +1,10 @@
 <mat-form-field [style.width]="width">
   <mat-label>{{ label }}</mat-label>
-  <input matInput [placeholder]="placeholder" [(ngModel)]="value" />
+  <input
+    #input
+    matInput
+    [placeholder]="placeholder"
+    [value]="value"
+    (input)="inputEvent(input.value)"
+  />
 </mat-form-field>
