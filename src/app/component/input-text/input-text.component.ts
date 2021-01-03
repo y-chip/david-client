@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -14,6 +14,8 @@ export class InputTextComponent implements OnInit {
   @Input() placeholder!: string;
 
   @Input() value!: string;
+
+  @Output() valueChange = new EventEmitter();
 
   constructor() {}
 
