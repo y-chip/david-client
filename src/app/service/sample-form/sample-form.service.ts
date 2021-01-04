@@ -1,29 +1,18 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { SampleForm } from './sample-form';
+import { SampleFormControllerService, SampleForm } from '@david/david-api';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SampleFormService {
-  private url = 'http://localhost:8080/sample-form';
-
-  httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
-  };
-
-  constructor(private httpClient: HttpClient) {}
+  constructor(private service: SampleFormControllerService) {}
 
   get(): Observable<SampleForm> {
-    return this.httpClient.get<SampleForm>(this.url);
+    return this.service.get();
   }
 
   post(sampleForm: SampleForm): Observable<SampleForm> {
-    return this.httpClient.post<SampleForm>(
-      this.url,
-      sampleForm,
-      this.httpOptions
-    );
+    return this.service.post(sampleForm);
   }
 }

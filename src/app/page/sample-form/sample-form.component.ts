@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SampleFormService } from '../../service/sample-form/sample-form.service';
-import { SampleForm } from '../../service/sample-form/sample-form';
+import { SampleForm } from '@david/david-api';
 
 @Component({
   selector: 'app-sample-form',
