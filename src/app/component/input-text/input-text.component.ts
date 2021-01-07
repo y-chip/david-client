@@ -13,7 +13,7 @@ export class InputTextComponent implements OnInit {
 
   @Input() placeholder!: string;
 
-  @Input() value!: string;
+  @Input() value: string | undefined;
 
   @Output() valueChange = new EventEmitter<string>();
 
