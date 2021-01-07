@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SampleFormService } from '../../service/sample-form/sample-form.service';
-import { SampleForm } from '@david/david-api';
+import { Sample } from '@david/david-api';
 
 @Component({
   selector: 'app-sample-form',
@@ -8,21 +8,21 @@ import { SampleForm } from '@david/david-api';
   styleUrls: ['./sample-form.component.css'],
 })
 export class SampleFormComponent implements OnInit {
-  sampleForm: SampleForm;
+  sample: Sample;
 
   constructor(private sampleFormService: SampleFormService) {
-    this.sampleForm = { string: '' };
+    this.sample = { string: '' };
   }
 
   ngOnInit(): void {
     this.sampleFormService
       .get()
-      .subscribe((sampleForm) => (this.sampleForm = sampleForm));
+      .subscribe((sample) => (this.sample = sample));
   }
 
   save(): void {
     this.sampleFormService
-      .post(this.sampleForm)
-      .subscribe((sampleForm) => (this.sampleForm = sampleForm));
+      .post(this.sample)
+      .subscribe((sample) => (this.sample = sample));
   }
 }
