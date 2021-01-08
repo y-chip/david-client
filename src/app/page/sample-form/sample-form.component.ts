@@ -15,9 +15,7 @@ export class SampleFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.sampleFormService
-      .get()
-      .subscribe((sample) => (this.sample = sample));
+    this.sampleFormService.get().subscribe((sample) => (this.sample = sample));
   }
 
   save(): void {
