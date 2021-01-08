@@ -11,7 +11,7 @@ export class SampleFormComponent implements OnInit {
   sample: Sample;
 
   constructor(private sampleFormService: SampleFormService) {
-    this.sample = { string: '' };
+    this.sample = { id: null, string: null };
   }
 
   ngOnInit(): void {
