@@ -7,32 +7,20 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./input-text.component.css'],
 })
 export class InputTextComponent implements OnInit {
-  @Input() width!: string;
-
-  @Input() label!: string;
-
-  @Input() placeholder!: string;
-
-  @Input() value: string | undefined;
-
+  @Input() width: string;
+  @Input() label: string;
+  @Input() placeholder: string;
+  @Input() value: string | null;
   @Output() valueChange = new EventEmitter<string>();
 
-  constructor() {}
-
-  ngOnInit(): void {
-    if (this.width == null) {
-      throw new Error('[width] is required');
-    }
-    if (this.label == null) {
-      throw new Error('[label] is required');
-    }
-    if (this.placeholder == null) {
-      throw new Error('[placeholder] is required');
-    }
-    if (this.value == null) {
-      throw new Error('[value] is required');
-    }
+  constructor() {
+    this.width = '20rem';
+    this.label = 'label';
+    this.placeholder = 'placeholder';
+    this.value = '';
   }
+
+  ngOnInit(): void {}
 
   inputEvent(value: string): void {
     this.value = value;
