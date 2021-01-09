@@ -8,7 +8,7 @@ import { MaterialModule } from '../material/material.module';
 
 import { RowComponent } from './row/row.component';
 import { ColumnComponent } from './column/column.component';
-import { InputTextComponent } from './input-text/input-text.component';
+import { InputTextComponent } from './field/input-text/input-text.component';
 import { ButtonComponent } from './button/button.component';
 
 @NgModule({
