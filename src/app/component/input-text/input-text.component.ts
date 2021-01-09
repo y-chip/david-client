@@ -12,12 +12,14 @@ export class InputTextComponent implements OnInit {
   @Input() placeholder: string;
   @Input() value: string | null;
   @Output() valueChange = new EventEmitter<string>();
+  @Input() disabled: boolean;
 
   constructor() {
     this.width = '20rem';
     this.label = 'label';
     this.placeholder = 'placeholder';
     this.value = '';
+    this.disabled = false;
   }
 
   ngOnInit(): void {}
