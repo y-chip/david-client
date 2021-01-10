@@ -3,11 +3,28 @@
   <dvd-row>
     <dvd-column>
       <dvd-input-text
-        width="20rem"
-        label="string"
-        placeholder="placeholder"
-        [(value)]="sample.string"
+        label="文字列"
+        placeholder="入力してください"
+        [(value)]="sample.text"
       ></dvd-input-text>
+    </dvd-column>
+  </dvd-row>
+  <dvd-row>
+    <dvd-column>
+      <dvd-input-textarea
+        label="長い文字列"
+        placeholder="入力してください"
+        [(value)]="sample.longText"
+      ></dvd-input-textarea>
+    </dvd-column>
+  </dvd-row>
+  <dvd-row>
+    <dvd-column>
+      <dvd-input-number
+        label="数値"
+        placeholder="入力してください"
+        [(value)]="sample.number"
+      ></dvd-input-number>
     </dvd-column>
   </dvd-row>
   <dvd-row>
