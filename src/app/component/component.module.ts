@@ -8,9 +8,10 @@ import { MaterialModule } from '../material/material.module';
 
 import { RowComponent } from './row/row.component';
 import { ColumnComponent } from './column/column.component';
-import { InputTextComponent } from './field/input-text/input-text.component';
-import { ButtonComponent } from './button/button.component';
 import { FieldComponent } from './field/field.component';
+import { InputTextComponent } from './field/input-text/input-text.component';
+import { InputTextareaComponent } from './field/input-textarea/input-textarea.component';
+import { ButtonComponent } from './button/button.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { FieldComponent } from './field/field.component';
     ColumnComponent,
     FieldComponent,
     InputTextComponent,
+    InputTextareaComponent,
     ButtonComponent,
   ],
   imports: [
@@ -32,6 +34,7 @@ import { FieldComponent } from './field/field.component';
     ColumnComponent,
     FieldComponent,
     InputTextComponent,
+    InputTextareaComponent,
     ButtonComponent,
   ],
 })

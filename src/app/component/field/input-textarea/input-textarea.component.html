@@ -1,0 +1,15 @@
+<mat-form-field appearance="outline" [style.width]="width">
+  <mat-label>{{ label }}</mat-label>
+  <textarea
+    #textarea
+    matInput
+    (input)="inputEvent(textarea.value)"
+    [disabled]="disabled"
+    [placeholder]="placeholder"
+    [required]="required"
+    cdkTextareaAutosize
+    [cdkAutosizeMinRows]="autosizeMinRows"
+    [cdkAutosizeMaxRows]="autosizeMaxRows"
+    >{{ value }}</textarea
+  >
+</mat-form-field>
