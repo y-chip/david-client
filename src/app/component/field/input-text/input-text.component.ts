@@ -9,10 +9,12 @@ import { FieldComponent } from '../field.component';
 })
 export class InputTextComponent extends FieldComponent implements OnInit {
   @Input() placeholder: string;
+  @Input() required: boolean;
 
   constructor() {
     super();
     this.placeholder = 'placeholder';
+    this.required = false;
   }
 
   ngOnInit(): void {}
