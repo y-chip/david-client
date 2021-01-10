@@ -11,6 +11,7 @@ import { ColumnComponent } from './column/column.component';
 import { FieldComponent } from './field/field.component';
 import { InputTextComponent } from './field/input-text/input-text.component';
 import { InputTextareaComponent } from './field/input-textarea/input-textarea.component';
+import { InputNumberComponent } from './field/input-number/input-number.component';
 import { ButtonComponent } from './button/button.component';
 
 @NgModule({
@@ -20,6 +21,7 @@ import { ButtonComponent } from './button/button.component';
     FieldComponent,
     InputTextComponent,
     InputTextareaComponent,
+    InputNumberComponent,
     ButtonComponent,
   ],
   imports: [
@@ -35,6 +37,7 @@ import { ButtonComponent } from './button/button.component';
     FieldComponent,
     InputTextComponent,
     InputTextareaComponent,
+    InputNumberComponent,
     ButtonComponent,
   ],
 })
