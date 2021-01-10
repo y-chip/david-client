@@ -1,4 +1,5 @@
-<mat-form-field [style.width]="width">
+<mat-form-field appearance="outline"
+                [style.width]="width">
   <mat-label>{{ label }}</mat-label>
   <input
     #input
@@ -8,4 +9,5 @@
     (input)="inputEvent(input.value)"
     [disabled]="disabled"
   />
+  <mat-hint>Hint</mat-hint>
 </mat-form-field>
