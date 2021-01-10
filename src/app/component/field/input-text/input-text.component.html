@@ -1,6 +1,7 @@
 <mat-form-field appearance="outline" [style.width]="width">
   <mat-label>{{ label }}</mat-label>
   <input
+    #input="ngModel"
     matInput
     type="text"
     [ngModel]="value"
@@ -9,4 +10,7 @@
     [placeholder]="placeholder"
     [required]="required"
   />
+  <mat-error *ngIf="input.touched && input.errors?.required">
+    入力してください。
+  </mat-error>
 </mat-form-field>
