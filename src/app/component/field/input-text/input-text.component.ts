@@ -1,4 +1,5 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { FieldComponent } from '../field.component';
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -6,20 +7,12 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   templateUrl: './input-text.component.html',
   styleUrls: ['./input-text.component.css'],
 })
-export class InputTextComponent implements OnInit {
-  @Input() width: string;
-  @Input() label: string;
+export class InputTextComponent extends FieldComponent implements OnInit {
   @Input() placeholder: string;
-  @Input() value: string | null;
-  @Output() valueChange = new EventEmitter<string>();
-  @Input() disabled: boolean;
 
   constructor() {
-    this.width = '20rem';
-    this.label = 'label';
+    super();
     this.placeholder = 'placeholder';
-    this.value = '';
-    this.disabled = false;
   }
 
   ngOnInit(): void {}
