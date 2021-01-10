@@ -2,11 +2,10 @@
                 [style.width]="width">
   <mat-label>{{ label }}</mat-label>
   <input
-    #input
     matInput
     type="number"
-    [value]="value"
-    (input)="inputEvent(input.value)"
+    [ngModel]="value"
+    (ngModelChange)="change($event)"
     [disabled]="disabled"
     [placeholder]="placeholder"
     [required]="required"

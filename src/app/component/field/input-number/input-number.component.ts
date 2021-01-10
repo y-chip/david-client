@@ -21,7 +21,7 @@ export class InputNumberComponent
 
   ngOnInit(): void {}
 
-  inputEvent(value: string): void {
+  change(value: string): void {
     const n = Number(value);
     this.value = n;
     this.valueChange.emit(n);

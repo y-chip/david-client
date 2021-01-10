@@ -1,12 +1,10 @@
-<mat-form-field appearance="outline"
-                [style.width]="width">
+<mat-form-field appearance="outline" [style.width]="width">
   <mat-label>{{ label }}</mat-label>
   <input
-    #input
     matInput
     type="text"
-    [value]="value"
-    (input)="inputEvent(input.value)"
+    [ngModel]="value"
+    (ngModelChange)="change($event)"
     [disabled]="disabled"
     [placeholder]="placeholder"
     [required]="required"
