@@ -7,7 +7,9 @@ import { FieldComponent } from '../field.component';
   templateUrl: './input-text.component.html',
   styleUrls: ['./input-text.component.css'],
 })
-export class InputTextComponent extends FieldComponent implements OnInit {
+export class InputTextComponent
+  extends FieldComponent<string>
+  implements OnInit {
   @Input() placeholder: string;
   @Input() required: boolean;
 

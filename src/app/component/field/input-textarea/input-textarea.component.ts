@@ -7,7 +7,9 @@ import { FieldComponent } from '../field.component';
   templateUrl: './input-textarea.component.html',
   styleUrls: ['./input-textarea.component.css'],
 })
-export class InputTextareaComponent extends FieldComponent implements OnInit {
+export class InputTextareaComponent
+  extends FieldComponent<string>
+  implements OnInit {
   @Input() placeholder: string;
   @Input() required: boolean;
   @Input() autosizeMinRows: number;

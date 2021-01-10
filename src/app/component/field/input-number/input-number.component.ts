@@ -7,7 +7,9 @@ import { FieldComponent } from '../field.component';
   templateUrl: './input-number.component.html',
   styleUrls: ['./input-number.component.css'],
 })
-export class InputNumberComponent extends FieldComponent implements OnInit {
+export class InputNumberComponent
+  extends FieldComponent<number>
+  implements OnInit {
   @Input() placeholder: string;
   @Input() required: boolean;
 
@@ -20,7 +22,8 @@ export class InputNumberComponent extends FieldComponent implements OnInit {
   ngOnInit(): void {}
 
   inputEvent(value: string): void {
-    this.value = value;
-    this.valueChange.emit(value);
+    const n = Number(value);
+    this.value = n;
+    this.valueChange.emit(n);
   }
 }
