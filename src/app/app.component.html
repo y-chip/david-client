@@ -1,5 +1,9 @@
 <div fxLayout="column" class="container">
-  <mat-toolbar color="primary" [class.toolbar-mobile]="isSmallDisplay()">
+  <mat-toolbar
+    color="primary"
+    class="mat-elevation-z6"
+    [class.toolbar-mobile]="isSmallDisplay()"
+  >
     <button mat-icon-button (click)="sidenav.toggle()">
       <mat-icon>menu</mat-icon>
     </button>

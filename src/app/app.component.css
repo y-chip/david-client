@@ -14,3 +14,11 @@
 h1.app-name {
   margin-left: 8px;
 }
+
+mat-toolbar {
+  z-index: 2;
+}
+
+mat-sidenav-container {
+  z-index: 1;
+}
