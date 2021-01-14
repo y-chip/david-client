@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MDCBanner } from '@material/banner';
+import { BannerService } from '../../service/banner/banner.service';
+import { CloseReason } from '@material/banner/constants';
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -8,10 +10,31 @@ import { MDCBanner } from '@material/banner';
   styleUrls: ['./banner.component.scss'],
 })
 export class BannerComponent implements OnInit {
-  constructor() {}
+  banner: MDCBanner | null;
+  text: string;
+  icon: string;
+
+  constructor(private bannerService: BannerService) {
+    this.banner = null;
+    this.text = 'text';
+    this.icon = 'info';
+  }
 
   ngOnInit(): void {
-    const banner = new MDCBanner(document.querySelector('.mdc-banner') as Element);
-    banner.open();
+    this.banner = new MDCBanner(
+      document.querySelector('.mdc-banner') as Element
+    );
+    this.bannerService.open$.subscribe((value) =>
+      this.open(value.text, value.icon)
+    );
+  }
+
+  open(text: string, icon: string): void {
+    if (this.banner === null) {
+      return;
+    }
+    this.text = text;
+    this.icon = icon;
+    this.banner.open();
   }
 }
