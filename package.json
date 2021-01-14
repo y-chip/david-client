@@ -25,6 +25,7 @@
     "@david/david-api": "file:pack/david-david-api-1.0.0.tgz",
     "@material/banner": "^9.0.0",
     "@material/button": "^9.0.0",
+    "@material/theme": "^9.0.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"

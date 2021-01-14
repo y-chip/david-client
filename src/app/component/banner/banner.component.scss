@@ -1,3 +1,7 @@
+@use "@material/theme" with (
+  $primary: #33691E,
+  $secondary: #F9A825,
+);
 @use "@material/banner/styles";
 @use "@material/button";
 @include button.core-styles;
