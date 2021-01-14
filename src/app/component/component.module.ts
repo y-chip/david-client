@@ -13,11 +13,13 @@ import { InputTextComponent } from './field/input-text/input-text.component';
 import { InputTextareaComponent } from './field/input-textarea/input-textarea.component';
 import { InputNumberComponent } from './field/input-number/input-number.component';
 import { ButtonComponent } from './button/button.component';
+import { BannerComponent } from './banner/banner.component';
 
 @NgModule({
   declarations: [
     RowComponent,
     ColumnComponent,
+    BannerComponent,
     FieldComponent,
     InputTextComponent,
     InputTextareaComponent,
@@ -34,6 +36,7 @@ import { ButtonComponent } from './button/button.component';
   exports: [
     RowComponent,
     ColumnComponent,
+    BannerComponent,
     FieldComponent,
     InputTextComponent,
     InputTextareaComponent,
