@@ -15,9 +15,13 @@ h1.app-name {
 }
 
 mat-toolbar {
+  z-index: 3;
+}
+
+mat-sidenav {
   z-index: 2;
 }
 
-mat-sidenav-container {
+mat-sidenav-content {
   z-index: 1;
 }
