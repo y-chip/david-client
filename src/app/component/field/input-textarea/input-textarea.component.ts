@@ -6,6 +6,7 @@ import { FieldComponent } from '../field.component';
   selector: 'dvd-input-textarea',
   templateUrl: './input-textarea.component.html',
   styleUrls: ['./input-textarea.component.css'],
+  providers: [{ provide: FieldComponent, useExisting: InputTextareaComponent }],
 })
 export class InputTextareaComponent
   extends FieldComponent<string>

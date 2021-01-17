@@ -6,6 +6,7 @@ import { FieldComponent } from '../field.component';
   selector: 'dvd-input-number',
   templateUrl: './input-number.component.html',
   styleUrls: ['./input-number.component.css'],
+  providers: [{ provide: FieldComponent, useExisting: InputNumberComponent }],
 })
 export class InputNumberComponent
   extends FieldComponent<number>
