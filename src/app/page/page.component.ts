@@ -16,7 +16,7 @@ export class PageComponent {
   protected progressSpinnerOverlayService: ProgressSpinnerOverlayService;
   @ViewChildren(FieldComponent) fields: QueryList<FieldComponent<any>> | null;
 
-  constructor(injector: Injector) {
+  constructor(private injector: Injector) {
     this.bannerService = injector.get(BannerService);
     this.snackbarService = injector.get(SnackbarService);
     this.progressSpinnerOverlayService = injector.get(
@@ -42,7 +42,15 @@ export class PageComponent {
     }
   }
 
-  protected isValidationError(arg: any): arg is ValidationError {
+  private showError(name: string, message: string): void {
+    this.fields?.forEach((f) => {
+      if (name === f.name) {
+        f.input?.control.setErrors({ serverError: true });
+      }
+    });
+  }
+
+  private isValidationError(arg: any): arg is ValidationError {
     return (
       arg !== null &&
       typeof arg === 'object' &&
@@ -51,7 +59,7 @@ export class PageComponent {
     );
   }
 
-  protected invalid(): boolean {
+  protected hasInvalidField(): boolean {
     if (this.fields == null) {
       return false;
     }
@@ -64,14 +72,6 @@ export class PageComponent {
   protected setTouched(): void {
     this.fields?.forEach((f) => {
       f.input?.control.markAsTouched();
-    });
-  }
-
-  protected showError(name: string, message: string): void {
-    this.fields?.forEach((f) => {
-      if (name === f.name) {
-        f.input?.control.setErrors({ serverError: true });
-      }
     });
   }
 }

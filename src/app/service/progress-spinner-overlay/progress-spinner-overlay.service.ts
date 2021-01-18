@@ -7,7 +7,7 @@ import { MatSpinner } from '@angular/material/progress-spinner';
   providedIn: 'root',
 })
 export class ProgressSpinnerOverlayService {
-  overlayRef = this.overlay.create({
+  private overlayRef = this.overlay.create({
     hasBackdrop: true,
     positionStrategy: this.overlay
       .position()

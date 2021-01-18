@@ -5,16 +5,16 @@ import { Subject } from 'rxjs';
   providedIn: 'root',
 })
 export class BannerService {
-  public open$: Subject<any> = new Subject();
-  public close$: Subject<any> = new Subject();
+  openSubject: Subject<any> = new Subject();
+  closeSubject: Subject<any> = new Subject();
 
   constructor() {}
 
   open(text: string, icon: string): void {
-    this.open$.next({text, icon});
+    this.openSubject.next({text, icon});
   }
 
   close(): void {
-    this.close$.next();
+    this.closeSubject.next();
   }
 }

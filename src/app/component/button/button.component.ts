@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ThemePalette } from '@angular/material/core/common-behaviors/color';
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -7,18 +8,13 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./button.component.css'],
 })
 export class ButtonComponent implements OnInit {
-  @Input() color!: string;
+  @Input() color: ThemePalette;
+  @Input() label: string;
 
-  @Input() label!: string;
-
-  constructor() {}
-
-  ngOnInit(): void {
-    if (this.color == null) {
-      throw new Error('[color] is required');
-    }
-    if (this.label == null) {
-      throw new Error('[label] is required');
-    }
+  constructor() {
+    this.color = 'primary';
+    this.label = 'button';
   }
+
+  ngOnInit(): void {}
 }

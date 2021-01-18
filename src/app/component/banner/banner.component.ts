@@ -10,7 +10,7 @@ import { CloseReason } from '@material/banner/constants';
   styleUrls: ['./banner.component.scss'],
 })
 export class BannerComponent implements OnInit {
-  banner: MDCBanner | null;
+  private banner: MDCBanner | null;
   text: string;
   icon: string;
 
@@ -24,25 +24,19 @@ export class BannerComponent implements OnInit {
     this.banner = new MDCBanner(
       document.querySelector('.mdc-banner') as Element
     );
-    this.bannerService.open$.subscribe((value) =>
+    this.bannerService.openSubject.subscribe((value) =>
       this.open(value.text, value.icon)
     );
-    this.bannerService.close$.subscribe(() => this.close());
+    this.bannerService.closeSubject.subscribe(() => this.close());
   }
 
-  open(text: string, icon: string): void {
-    if (this.banner === null) {
-      return;
-    }
+  private open(text: string, icon: string): void {
     this.text = text;
     this.icon = icon;
-    this.banner.open();
+    this.banner?.open();
   }
 
-  close(): void {
-    if (this.banner === null) {
-      return;
-    }
-    this.banner.close(CloseReason.UNSPECIFIED);
+  private close(): void {
+    this.banner?.close(CloseReason.UNSPECIFIED);
   }
 }
