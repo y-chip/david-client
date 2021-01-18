@@ -25,7 +25,7 @@ export class SampleFormComponent extends PageComponent implements OnInit {
       this.sample = sample;
       this.progressSpinnerOverlayService.close();
       return;
-    });
+    }, this.handleError);
   }
 
   save(): void {
@@ -35,21 +35,11 @@ export class SampleFormComponent extends PageComponent implements OnInit {
       return;
     }
     this.progressSpinnerOverlayService.show();
-    this.sampleFormService.post(this.sample).subscribe(
-      (sample) => {
-        this.sample = sample;
-        this.progressSpinnerOverlayService.close();
-        this.snackbarService.open('保存しました。');
-        return;
-      },
-      (response) => {
-        if (response.status === 400 && this.isValidationError(response.error)) {
-          if (response.error.message != null) {
-            this.bannerService.open(response.error.message, 'info');
-            this.showError(response.error.field, response.error.message);
-          }
-        }
-      }
-    );
+    this.sampleFormService.post(this.sample).subscribe((sample) => {
+      this.sample = sample;
+      this.progressSpinnerOverlayService.close();
+      this.snackbarService.open('保存しました。');
+      return;
+    }, this.handleError());
   }
 }

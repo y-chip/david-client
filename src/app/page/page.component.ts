@@ -23,6 +23,17 @@ export class PageComponent {
     this.fields = null;
   }
 
+  protected handleError(): (error: any) => void {
+    return (response) => {
+      if (response.status === 400 && this.isValidationError(response.error)) {
+        if (response.error.message != null) {
+          this.bannerService.open(response.error.message, 'info');
+          this.showError(response.error.field, response.error.message);
+        }
+      }
+    };
+  }
+
   protected isValidationError(arg: any): arg is ValidationError {
     return (
       arg !== null &&
