@@ -1,0 +1,9 @@
+<div [style.width]="width">
+  <mat-slide-toggle
+    #input="ngModel"
+    [ngModel]="value"
+    (ngModelChange)="change($event)"
+    [disabled]="disabled"
+    >{{ label }}</mat-slide-toggle
+  >
+</div>

@@ -33,6 +33,14 @@
   </dvd-row>
   <dvd-row>
     <dvd-column>
+      <dvd-slide-toggle
+        label="真偽値"
+        [(value)]="sample.bool"
+      ></dvd-slide-toggle>
+    </dvd-column>
+  </dvd-row>
+  <dvd-row>
+    <dvd-column>
       <dvd-button color="accent" label="save" (click)="save()"></dvd-button>
     </dvd-column>
   </dvd-row>

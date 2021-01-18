@@ -14,6 +14,7 @@ import { InputTextareaComponent } from './field/input-textarea/input-textarea.co
 import { InputNumberComponent } from './field/input-number/input-number.component';
 import { ButtonComponent } from './button/button.component';
 import { BannerComponent } from './banner/banner.component';
+import { SlideToggleComponent } from './field/slide-toggle/slide-toggle.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { BannerComponent } from './banner/banner.component';
     InputTextComponent,
     InputTextareaComponent,
     InputNumberComponent,
+    SlideToggleComponent,
     ButtonComponent,
   ],
   imports: [
@@ -41,6 +43,7 @@ import { BannerComponent } from './banner/banner.component';
     InputTextComponent,
     InputTextareaComponent,
     InputNumberComponent,
+    SlideToggleComponent,
     ButtonComponent,
   ],
 })

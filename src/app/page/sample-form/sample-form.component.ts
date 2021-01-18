@@ -16,7 +16,13 @@ export class SampleFormComponent extends PageComponent implements OnInit {
     private sampleFormService: SampleFormService
   ) {
     super(injector);
-    this.sample = { id: null, text: null, longText: null, number: null };
+    this.sample = {
+      id: null,
+      text: null,
+      longText: null,
+      number: null,
+      bool: false,
+    };
   }
 
   ngOnInit(): void {
