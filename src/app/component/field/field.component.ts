@@ -13,6 +13,7 @@ import { NgModel } from '@angular/forms';
 export class FieldComponent<T> {
   @Input() width: string;
   @Input() label: string;
+  @Input() name: string;
   @Input() value: T | null;
   @Output() valueChange = new EventEmitter<T>();
   @Input() disabled: boolean;
@@ -21,6 +22,7 @@ export class FieldComponent<T> {
   constructor() {
     this.width = '20rem';
     this.label = 'label';
+    this.name = '';
     this.value = null;
     this.disabled = false;
     this.input = null;
