@@ -6,10 +6,15 @@ import { Subject } from 'rxjs';
 })
 export class BannerService {
   public open$: Subject<any> = new Subject();
+  public close$: Subject<any> = new Subject();
 
   constructor() {}
 
   open(text: string, icon: string): void {
     this.open$.next({text, icon});
+  }
+
+  close(): void {
+    this.close$.next();
   }
 }

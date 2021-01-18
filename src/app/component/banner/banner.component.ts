@@ -27,6 +27,7 @@ export class BannerComponent implements OnInit {
     this.bannerService.open$.subscribe((value) =>
       this.open(value.text, value.icon)
     );
+    this.bannerService.close$.subscribe(() => this.close());
   }
 
   open(text: string, icon: string): void {
@@ -36,5 +37,12 @@ export class BannerComponent implements OnInit {
     this.text = text;
     this.icon = icon;
     this.banner.open();
+  }
+
+  close(): void {
+    if (this.banner === null) {
+      return;
+    }
+    this.banner.close(CloseReason.UNSPECIFIED);
   }
 }
