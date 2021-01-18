@@ -1,6 +1,6 @@
 import { Component, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { SampleFormService } from '../../service/sample-form/sample-form.service';
-import { Sample } from '@david/david-api';
+import {Sample, ValidationError} from '@david/david-api';
 import { SnackbarService } from '../../service/snackbar/snackbar.service';
 import { ProgressSpinnerOverlayService } from '../../service/progress-spinner-overlay/progress-spinner-overlay.service';
 import { FieldComponent } from '../../component/field/field.component';
@@ -41,12 +41,31 @@ export class SampleFormComponent implements OnInit {
       return;
     }
 
-    this.sampleFormService.post(this.sample).subscribe((sample) => {
-      this.sample = sample;
-      this.progressSpinnerOverlayService.close();
-      this.snackbarService.open('保存しました。');
-      return;
-    });
+    this.sampleFormService.post(this.sample).subscribe(
+      (sample) => {
+        this.sample = sample;
+        this.progressSpinnerOverlayService.close();
+        this.snackbarService.open('保存しました。');
+        return;
+      },
+      (response) => {
+        if (response.status === 400 && this.isValidationError(response.error)) {
+          if (response.error.message != null) {
+            this.bannerService.open(response.error.message, 'info');
+            this.showError(response.error.field, response.error.message);
+          }
+        }
+      }
+    );
+  }
+
+  private isValidationError(arg: any): arg is ValidationError {
+    return (
+      arg !== null &&
+      typeof arg === 'object' &&
+      typeof arg.field === 'string' &&
+      typeof arg.message === 'string'
+    );
   }
 
   invalid(): boolean {
@@ -62,6 +81,14 @@ export class SampleFormComponent implements OnInit {
   setTouched(): void {
     this.fields?.forEach((f) => {
       f.input?.control.markAsTouched();
+    });
+  }
+
+  showError(name: string, message: string): void {
+    this.fields?.forEach((f) => {
+      if (name === f.name) {
+        f.input?.control.setErrors({serverError: true});
+      }
     });
   }
 }
