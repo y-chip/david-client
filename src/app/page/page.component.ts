@@ -4,6 +4,8 @@ import { BannerService } from '../service/banner/banner.service';
 import { SnackbarService } from '../service/snackbar/snackbar.service';
 import { ProgressSpinnerOverlayService } from '../service/progress-spinner-overlay/progress-spinner-overlay.service';
 import { ValidationError } from '@david/david-api';
+import { Observable } from 'rxjs';
+import { finalize } from 'rxjs/operators';
 
 @Component({
   template: ``,
@@ -21,6 +23,13 @@ export class PageComponent {
       ProgressSpinnerOverlayService
     );
     this.fields = null;
+  }
+
+  protected http<T>(obs$: Observable<T>, next?: (value: T) => void): void {
+    this.progressSpinnerOverlayService.show();
+    obs$
+      .pipe(finalize(() => this.progressSpinnerOverlayService.close()))
+      .subscribe(next, this.handleError);
   }
 
   protected handleError(): (error: any) => void {

@@ -20,12 +20,9 @@ export class SampleFormComponent extends PageComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.progressSpinnerOverlayService.show();
-    this.sampleFormService.get().subscribe((sample) => {
+    this.http(this.sampleFormService.get(), (sample) => {
       this.sample = sample;
-      this.progressSpinnerOverlayService.close();
-      return;
-    }, this.handleError);
+    });
   }
 
   save(): void {
@@ -34,12 +31,9 @@ export class SampleFormComponent extends PageComponent implements OnInit {
       this.bannerService.open('入力エラーがあります。', 'error');
       return;
     }
-    this.progressSpinnerOverlayService.show();
-    this.sampleFormService.post(this.sample).subscribe((sample) => {
+    this.http(this.sampleFormService.post(this.sample), (sample) => {
       this.sample = sample;
-      this.progressSpinnerOverlayService.close();
       this.snackbarService.open('保存しました。');
-      return;
-    }, this.handleError());
+    });
   }
 }
