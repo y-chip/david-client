@@ -29,18 +29,16 @@ export class PageComponent {
     this.progressSpinnerOverlayService.show();
     obs$
       .pipe(finalize(() => this.progressSpinnerOverlayService.close()))
-      .subscribe(next, this.handleError);
+      .subscribe(next, (error) => this.handleError(error));
   }
 
-  protected handleError(): (error: any) => void {
-    return (response) => {
-      if (response.status === 400 && this.isValidationError(response.error)) {
-        if (response.error.message != null) {
-          this.bannerService.open(response.error.message, 'info');
-          this.showError(response.error.field, response.error.message);
-        }
+  private handleError(response: any): void {
+    if (response.status === 400 && this.isValidationError(response.error)) {
+      if (response.error.message != null) {
+        this.bannerService.open(response.error.message, 'info');
+        this.showError(response.error.field, response.error.message);
       }
-    };
+    }
   }
 
   protected isValidationError(arg: any): arg is ValidationError {
