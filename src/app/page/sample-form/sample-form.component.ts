@@ -1,27 +1,21 @@
-import { Component, OnInit, QueryList, ViewChildren } from '@angular/core';
+import { Component, Injector, OnInit } from '@angular/core';
 import { SampleFormService } from '../../service/sample-form/sample-form.service';
-import {Sample, ValidationError} from '@david/david-api';
-import { SnackbarService } from '../../service/snackbar/snackbar.service';
-import { ProgressSpinnerOverlayService } from '../../service/progress-spinner-overlay/progress-spinner-overlay.service';
-import { FieldComponent } from '../../component/field/field.component';
-import { BannerService } from '../../service/banner/banner.service';
+import { Sample } from '@david/david-api';
+import { PageComponent } from '../page.component';
 
 @Component({
   selector: 'app-sample-form',
   templateUrl: './sample-form.component.html',
   styleUrls: ['./sample-form.component.css'],
 })
-export class SampleFormComponent implements OnInit {
-  @ViewChildren(FieldComponent) fields: QueryList<FieldComponent<any>> | null;
+export class SampleFormComponent extends PageComponent implements OnInit {
   sample: Sample;
 
   constructor(
-    private sampleFormService: SampleFormService,
-    private bannerService: BannerService,
-    private snackbarService: SnackbarService,
-    private progressSpinnerOverlayService: ProgressSpinnerOverlayService
+    injector: Injector,
+    private sampleFormService: SampleFormService
   ) {
-    this.fields = null;
+    super(injector);
     this.sample = { id: null, text: null, longText: null, number: null };
   }
 
@@ -57,38 +51,5 @@ export class SampleFormComponent implements OnInit {
         }
       }
     );
-  }
-
-  private isValidationError(arg: any): arg is ValidationError {
-    return (
-      arg !== null &&
-      typeof arg === 'object' &&
-      typeof arg.field === 'string' &&
-      typeof arg.message === 'string'
-    );
-  }
-
-  invalid(): boolean {
-    if (this.fields == null) {
-      return false;
-    }
-
-    return this.fields.some((f) => {
-      return !!f.input?.invalid;
-    });
-  }
-
-  setTouched(): void {
-    this.fields?.forEach((f) => {
-      f.input?.control.markAsTouched();
-    });
-  }
-
-  showError(name: string, message: string): void {
-    this.fields?.forEach((f) => {
-      if (name === f.name) {
-        f.input?.control.setErrors({serverError: true});
-      }
-    });
   }
 }

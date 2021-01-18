@@ -10,9 +10,15 @@ import { ComponentModule } from './component/component.module';
 import { AppComponent } from './app.component';
 import { ComponentListComponent } from './page/component-list/component-list.component';
 import { SampleFormComponent } from './page/sample-form/sample-form.component';
+import { PageComponent } from './page/page.component';
 
 @NgModule({
-  declarations: [AppComponent, ComponentListComponent, SampleFormComponent],
+  declarations: [
+    AppComponent,
+    PageComponent,
+    ComponentListComponent,
+    SampleFormComponent,
+  ],
   imports: [
     BrowserModule,
     FlexLayoutModule,
