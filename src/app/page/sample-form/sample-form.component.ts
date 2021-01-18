@@ -36,6 +36,7 @@ export class SampleFormComponent implements OnInit {
 
   save(): void {
     if (this.invalid()) {
+      this.setTouched();
       this.bannerService.open('入力エラーがあります。', 'error');
       return;
     }
@@ -55,6 +56,12 @@ export class SampleFormComponent implements OnInit {
 
     return this.fields.some((f) => {
       return !!f.input?.invalid;
+    });
+  }
+
+  setTouched(): void {
+    this.fields?.forEach((f) => {
+      f.input?.control.markAsTouched();
     });
   }
 }
