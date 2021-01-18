@@ -34,7 +34,7 @@ export class SampleFormComponent extends PageComponent implements OnInit {
       this.bannerService.open('入力エラーがあります。', 'error');
       return;
     }
-
+    this.progressSpinnerOverlayService.show();
     this.sampleFormService.post(this.sample).subscribe(
       (sample) => {
         this.sample = sample;
