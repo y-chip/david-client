@@ -26,6 +26,7 @@ export class PageComponent {
   }
 
   protected http<T>(obs$: Observable<T>, next?: (value: T) => void): void {
+    this.bannerService.close();
     this.progressSpinnerOverlayService.show();
     obs$
       .pipe(finalize(() => this.progressSpinnerOverlayService.close()))

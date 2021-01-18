@@ -26,6 +26,7 @@ export class SampleFormComponent extends PageComponent implements OnInit {
   }
 
   save(): void {
+    this.bannerService.close();
     if (this.invalid()) {
       this.setTouched();
       this.bannerService.open('入力エラーがあります。', 'error');
