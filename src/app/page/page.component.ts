@@ -69,6 +69,11 @@ export class PageComponent {
     });
   }
 
+  protected showInvalidField(): void {
+    this.setTouched();
+    this.bannerService.open('入力エラーがあります。', 'error');
+  }
+
   protected setTouched(): void {
     this.fields?.forEach((f) => {
       f.input?.control.markAsTouched();
