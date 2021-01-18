@@ -27,18 +27,48 @@ export class PageComponent {
 
   protected http<T>(obs$: Observable<T>, next?: (value: T) => void): void {
     this.bannerService.close();
+
+    if (this.hasInvalidField()) {
+      this.showInvalidField();
+      return;
+    }
+
     this.progressSpinnerOverlayService.show();
     obs$
       .pipe(finalize(() => this.progressSpinnerOverlayService.close()))
       .subscribe(next, (error) => this.handleError(error));
   }
 
+  private hasInvalidField(): boolean {
+    if (this.fields == null) {
+      return false;
+    }
+
+    return this.fields.some((f) => {
+      return !!f.input?.invalid;
+    });
+  }
+
+  private showInvalidField(): void {
+    this.setTouched();
+    this.bannerService.open('入力エラーがあります。', 'error');
+  }
+
+  protected setTouched(): void {
+    this.fields?.forEach((f) => {
+      f.input?.control.markAsTouched();
+    });
+  }
+
   private handleError(response: any): void {
     if (response.status === 400 && this.isValidationError(response.error)) {
       if (response.error.message != null) {
-        this.bannerService.open(response.error.message, 'info');
+        this.bannerService.open(response.error.message, 'error');
         this.showError(response.error.field, response.error.message);
       }
+    } else {
+      this.bannerService.open('予期せぬエラーが発生しました。', 'warning');
+      console.error(response);
     }
   }
 
@@ -57,26 +87,5 @@ export class PageComponent {
       typeof arg.field === 'string' &&
       typeof arg.message === 'string'
     );
-  }
-
-  protected hasInvalidField(): boolean {
-    if (this.fields == null) {
-      return false;
-    }
-
-    return this.fields.some((f) => {
-      return !!f.input?.invalid;
-    });
-  }
-
-  protected showInvalidField(): void {
-    this.setTouched();
-    this.bannerService.open('入力エラーがあります。', 'error');
-  }
-
-  protected setTouched(): void {
-    this.fields?.forEach((f) => {
-      f.input?.control.markAsTouched();
-    });
   }
 }

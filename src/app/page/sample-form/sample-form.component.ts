@@ -26,11 +26,6 @@ export class SampleFormComponent extends PageComponent implements OnInit {
   }
 
   save(): void {
-    this.bannerService.close();
-    if (this.hasInvalidField()) {
-      this.showInvalidField();
-      return;
-    }
     this.http(this.sampleFormService.post(this.sample), (sample) => {
       this.sample = sample;
       this.snackbarService.open('保存しました。');
