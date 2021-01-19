@@ -22,6 +22,7 @@ export class SampleFormComponent extends PageComponent implements OnInit {
       longText: null,
       number: null,
       bool: false,
+      dateVal: null,
     };
   }
 
