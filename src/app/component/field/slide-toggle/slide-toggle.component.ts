@@ -6,6 +6,7 @@ import { FieldComponent } from '../field.component';
   selector: 'dvd-slide-toggle',
   templateUrl: './slide-toggle.component.html',
   styleUrls: ['./slide-toggle.component.css'],
+  providers: [{ provide: FieldComponent, useExisting: SlideToggleComponent }],
 })
 export class SlideToggleComponent
   extends FieldComponent<boolean>
