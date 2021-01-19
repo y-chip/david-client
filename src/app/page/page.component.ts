@@ -50,11 +50,11 @@ export class PageComponent {
   }
 
   private showInvalidField(): void {
-    this.setTouched();
+    this.markAsTouchedAll();
     this.bannerService.open('入力エラーがあります。', 'error');
   }
 
-  protected setTouched(): void {
+  protected markAsTouchedAll(): void {
     this.fields?.forEach((f) => {
       f.input?.control.markAsTouched();
     });
