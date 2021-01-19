@@ -29,5 +29,6 @@ export class InputTextareaComponent
   onChangeValue(value: string): void {
     this.value = value;
     this.valueChange.emit(value);
+    this.change.emit(value);
   }
 }

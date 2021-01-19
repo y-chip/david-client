@@ -25,5 +25,6 @@ export class InputTextComponent
   onChangeValue(value: string): void {
     this.value = value;
     this.valueChange.emit(value);
+    this.change.emit(value);
   }
 }

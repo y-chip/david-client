@@ -26,5 +26,6 @@ export class InputNumberComponent
     const n = Number(value);
     this.value = n;
     this.valueChange.emit(n);
+    this.change.emit(n);
   }
 }

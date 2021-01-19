@@ -20,5 +20,6 @@ export class SlideToggleComponent
   onChangeValue(value: boolean): void {
     this.value = value;
     this.valueChange.emit(value);
+    this.change.emit(value);
   }
 }

@@ -17,6 +17,9 @@ export class FieldComponent<T> {
   @Input() value: T | null;
   @Output() valueChange = new EventEmitter<T>();
   @Input() disabled: boolean;
+  // tslint:disable-next-line:no-output-native
+  @Output()
+  change: EventEmitter<T> = new EventEmitter<T>();
   @ViewChild('input') input: NgModel | null;
 
   constructor() {
