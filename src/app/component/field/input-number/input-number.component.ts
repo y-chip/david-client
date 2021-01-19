@@ -22,7 +22,7 @@ export class InputNumberComponent
 
   ngOnInit(): void {}
 
-  change(value: string): void {
+  onChangeValue(value: string): void {
     const n = Number(value);
     this.value = n;
     this.valueChange.emit(n);

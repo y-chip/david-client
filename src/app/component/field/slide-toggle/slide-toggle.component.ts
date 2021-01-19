@@ -17,7 +17,7 @@ export class SlideToggleComponent
 
   ngOnInit(): void {}
 
-  change(value: boolean): void {
+  onChangeValue(value: boolean): void {
     this.value = value;
     this.valueChange.emit(value);
   }

@@ -2,7 +2,7 @@
   <mat-slide-toggle
     #input="ngModel"
     [ngModel]="value"
-    (ngModelChange)="change($event)"
+    (ngModelChange)="onChangeValue($event)"
     [disabled]="disabled"
     >{{ label }}</mat-slide-toggle
   >

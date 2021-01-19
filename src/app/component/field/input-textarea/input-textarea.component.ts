@@ -26,7 +26,7 @@ export class InputTextareaComponent
 
   ngOnInit(): void {}
 
-  change(value: string): void {
+  onChangeValue(value: string): void {
     this.value = value;
     this.valueChange.emit(value);
   }
