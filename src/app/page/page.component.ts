@@ -60,6 +60,12 @@ export class PageComponent {
     });
   }
 
+  protected setDisabledAll(disabled: boolean): void {
+    this.fields?.forEach((f) => {
+      f.disabled = disabled;
+    });
+  }
+
   private handleError(response: any): void {
     if (response.status === 400 && this.isValidationError(response.error)) {
       if (response.error.message != null) {
