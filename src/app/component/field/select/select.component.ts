@@ -8,20 +8,20 @@ import { FieldComponent } from '../field.component';
   styleUrls: ['./select.component.css'],
   providers: [{ provide: FieldComponent, useExisting: SelectComponent }],
 })
-export class SelectComponent<T> extends FieldComponent<any> implements OnInit {
+export class SelectComponent extends FieldComponent<any> implements OnInit {
   @Input() placeholder: string;
   @Input() required: boolean;
-  @Input() options: T[];
-  @Input() optionLabelProperty: keyof T | null;
-  @Input() optionValueProperty: keyof T | null;
+  @Input() options: { [index: string]: any }[];
+  @Input() optionLabelProperty: string;
+  @Input() optionValueProperty: string;
 
   constructor() {
     super();
     this.placeholder = 'placeholder';
     this.required = false;
-    this.options = [{} as T];
-    this.optionLabelProperty = null;
-    this.optionValueProperty = null;
+    this.options = [{ key: 'key', value: 'value' }];
+    this.optionLabelProperty = 'key';
+    this.optionValueProperty = 'value';
   }
 
   ngOnInit(): void {}
