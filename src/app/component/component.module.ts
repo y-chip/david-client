@@ -16,6 +16,7 @@ import { ButtonComponent } from './button/button.component';
 import { BannerComponent } from './banner/banner.component';
 import { SlideToggleComponent } from './field/slide-toggle/slide-toggle.component';
 import { DatepickerComponent } from './field/datepicker/datepicker.component';
+import { SelectComponent } from './field/select/select.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { DatepickerComponent } from './field/datepicker/datepicker.component';
     InputNumberComponent,
     SlideToggleComponent,
     DatepickerComponent,
+    SelectComponent,
     ButtonComponent,
   ],
   imports: [
@@ -47,6 +49,7 @@ import { DatepickerComponent } from './field/datepicker/datepicker.component';
     InputNumberComponent,
     SlideToggleComponent,
     DatepickerComponent,
+    SelectComponent,
     ButtonComponent,
   ],
 })
