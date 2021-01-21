@@ -3,12 +3,12 @@ import { FieldComponent } from '../field.component';
 
 @Component({
   // tslint:disable-next-line:component-selector
-  selector: 'dvd-datepicker',
-  templateUrl: './datepicker.component.html',
-  styleUrls: ['./datepicker.component.css'],
-  providers: [{ provide: FieldComponent, useExisting: DatepickerComponent }],
+  selector: 'dvd-field-date',
+  templateUrl: './field-date.component.html',
+  styleUrls: ['./field-date.component.css'],
+  providers: [{ provide: FieldComponent, useExisting: FieldDateComponent }],
 })
-export class DatepickerComponent
+export class FieldDateComponent
   extends FieldComponent<Date>
   implements OnInit {
   @Input() placeholder: string;

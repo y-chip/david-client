@@ -15,7 +15,7 @@ import { InputNumberComponent } from './field/input-number/input-number.componen
 import { ButtonComponent } from './button/button.component';
 import { BannerComponent } from './banner/banner.component';
 import { SlideToggleComponent } from './field/slide-toggle/slide-toggle.component';
-import { DatepickerComponent } from './field/datepicker/datepicker.component';
+import { FieldDateComponent } from './field/date/field-date.component';
 import { SelectComponent } from './field/select/select.component';
 import { RadioButtonComponent } from './field/radio-button/radio-button.component';
 
@@ -29,7 +29,7 @@ import { RadioButtonComponent } from './field/radio-button/radio-button.componen
     InputTextareaComponent,
     InputNumberComponent,
     SlideToggleComponent,
-    DatepickerComponent,
+    FieldDateComponent,
     SelectComponent,
     RadioButtonComponent,
     ButtonComponent,
@@ -50,7 +50,7 @@ import { RadioButtonComponent } from './field/radio-button/radio-button.componen
     InputTextareaComponent,
     InputNumberComponent,
     SlideToggleComponent,
-    DatepickerComponent,
+    FieldDateComponent,
     SelectComponent,
     RadioButtonComponent,
     ButtonComponent,
