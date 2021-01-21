@@ -1,8 +1,14 @@
+div {
+  padding-bottom: 1.34375em;
+}
 label {
   display: block;
+  padding-bottom: 10px;
 }
 mat-radio-group {
   display: flex;
   flex-direction: column;
-  margin: 15px 0;
+}
+mat-radio-button {
+  margin: 5px;
 }
