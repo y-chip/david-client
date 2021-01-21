@@ -1,8 +1,11 @@
 import { Component, Injector, OnInit } from '@angular/core';
-import { SampleFormService } from '../../service/sample-form/sample-form.service';
-import { Master, Sample } from '@david/david-api';
 import { PageComponent } from '../page.component';
-import { MasterService } from '../../service/master/master.service';
+import {
+  Master,
+  MasterControllerService,
+  Sample,
+  SampleFormControllerService,
+} from '@david/david-api';
 
 @Component({
   selector: 'app-sample-form',
@@ -15,8 +18,8 @@ export class SampleFormComponent extends PageComponent implements OnInit {
 
   constructor(
     injector: Injector,
-    private sampleFormService: SampleFormService,
-    private masterService: MasterService
+    private sampleFormControllerService: SampleFormControllerService,
+    private masterControllerService: MasterControllerService
   ) {
     super(injector);
     this.sample = {} as Sample;
@@ -24,16 +27,16 @@ export class SampleFormComponent extends PageComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.http(this.sampleFormService.get(), (sample) => {
+    this.http(this.sampleFormControllerService.get(), (sample) => {
       this.sample = sample;
     });
-    this.masterService.get().subscribe((master) => {
+    this.masterControllerService.get1().subscribe((master) => {
       this.master = master;
     });
   }
 
   save(): void {
-    this.http(this.sampleFormService.post(this.sample), (sample) => {
+    this.http(this.sampleFormControllerService.save(this.sample), (sample) => {
       this.sample = sample;
       this.snackbarService.open('保存しました。');
     });
