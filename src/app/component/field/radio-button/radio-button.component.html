@@ -1,0 +1,18 @@
+<div [style.width]="width">
+  <label>{{ label }}</label>
+  <mat-radio-group
+    #input="ngModel"
+    [ngModel]="value"
+    (ngModelChange)="onChangeValue($event)"
+    [disabled]="disabled"
+    [required]="required"
+  >
+    <mat-radio-button
+      *ngFor="let o of options"
+      [value]="o[optionValueProperty]"
+    >
+      {{ o[optionLabelProperty] }}
+    </mat-radio-button>
+  </mat-radio-group>
+  <mat-error *ngIf="input.errors?.required"> 入力してください。 </mat-error>
+</div>

@@ -17,6 +17,7 @@ import { BannerComponent } from './banner/banner.component';
 import { SlideToggleComponent } from './field/slide-toggle/slide-toggle.component';
 import { DatepickerComponent } from './field/datepicker/datepicker.component';
 import { SelectComponent } from './field/select/select.component';
+import { RadioButtonComponent } from './field/radio-button/radio-button.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { SelectComponent } from './field/select/select.component';
     SlideToggleComponent,
     DatepickerComponent,
     SelectComponent,
+    RadioButtonComponent,
     ButtonComponent,
   ],
   imports: [
@@ -50,6 +52,7 @@ import { SelectComponent } from './field/select/select.component';
     SlideToggleComponent,
     DatepickerComponent,
     SelectComponent,
+    RadioButtonComponent,
     ButtonComponent,
   ],
 })
