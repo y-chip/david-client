@@ -11,7 +11,7 @@ export class BannerService {
   constructor() {}
 
   open(text: string, icon: string): void {
-    this.openSubject.next({text, icon});
+    this.openSubject.next({ text, icon });
   }
 
   close(): void {

@@ -8,9 +8,7 @@ import { FieldComponent } from '../field.component';
   styleUrls: ['./field-date.component.css'],
   providers: [{ provide: FieldComponent, useExisting: FieldDateComponent }],
 })
-export class FieldDateComponent
-  extends FieldComponent<Date>
-  implements OnInit {
+export class FieldDateComponent extends FieldComponent<Date> implements OnInit {
   @Input() placeholder: string;
   @Input() required: boolean;
 

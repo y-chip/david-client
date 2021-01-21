@@ -8,9 +8,7 @@ import { FieldComponent } from '../field.component';
   styleUrls: ['./field-radio.component.css'],
   providers: [{ provide: FieldComponent, useExisting: FieldRadioComponent }],
 })
-export class FieldRadioComponent
-  extends FieldComponent<any>
-  implements OnInit {
+export class FieldRadioComponent extends FieldComponent<any> implements OnInit {
   @Input() required: boolean;
   @Input() options: { [index: string]: any }[];
   @Input() optionLabelProperty: string;

@@ -8,7 +8,9 @@ import { FieldComponent } from '../field.component';
   styleUrls: ['./field-select.component.css'],
   providers: [{ provide: FieldComponent, useExisting: FieldSelectComponent }],
 })
-export class FieldSelectComponent extends FieldComponent<any> implements OnInit {
+export class FieldSelectComponent
+  extends FieldComponent<any>
+  implements OnInit {
   @Input() placeholder: string;
   @Input() required: boolean;
   @Input() options: { [index: string]: any }[];
