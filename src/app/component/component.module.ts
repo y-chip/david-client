@@ -11,7 +11,7 @@ import { ColumnComponent } from './column/column.component';
 import { FieldComponent } from './field/field.component';
 import { InputTextComponent } from './field/input-text/input-text.component';
 import { InputTextareaComponent } from './field/input-textarea/input-textarea.component';
-import { InputNumberComponent } from './field/input-number/input-number.component';
+import { FieldNumberComponent } from './field/number/field-number.component';
 import { ButtonComponent } from './button/button.component';
 import { BannerComponent } from './banner/banner.component';
 import { SlideToggleComponent } from './field/slide-toggle/slide-toggle.component';
@@ -27,7 +27,7 @@ import { RadioButtonComponent } from './field/radio-button/radio-button.componen
     FieldComponent,
     InputTextComponent,
     InputTextareaComponent,
-    InputNumberComponent,
+    FieldNumberComponent,
     SlideToggleComponent,
     FieldDateComponent,
     SelectComponent,
@@ -48,7 +48,7 @@ import { RadioButtonComponent } from './field/radio-button/radio-button.componen
     FieldComponent,
     InputTextComponent,
     InputTextareaComponent,
-    InputNumberComponent,
+    FieldNumberComponent,
     SlideToggleComponent,
     FieldDateComponent,
     SelectComponent,
