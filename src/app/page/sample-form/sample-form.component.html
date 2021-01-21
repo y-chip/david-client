@@ -60,6 +60,17 @@
   </dvd-row>
   <dvd-row>
     <dvd-column>
+      <dvd-field-radio
+        label="ラジオ"
+        [options]="master"
+        optionLabelProperty="name"
+        optionValueProperty="code"
+        [(value)]="sample.fieldRadio"
+      ></dvd-field-radio>
+    </dvd-column>
+  </dvd-row>
+  <dvd-row>
+    <dvd-column>
       <dvd-button color="accent" label="save" (click)="save()"></dvd-button>
     </dvd-column>
   </dvd-row>
