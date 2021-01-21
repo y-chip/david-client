@@ -3,12 +3,12 @@ import { FieldComponent } from '../field.component';
 
 @Component({
   // tslint:disable-next-line:component-selector
-  selector: 'dvd-radio-button',
-  templateUrl: './radio-button.component.html',
-  styleUrls: ['./radio-button.component.css'],
-  providers: [{ provide: FieldComponent, useExisting: RadioButtonComponent }],
+  selector: 'dvd-field-radio',
+  templateUrl: './radio.component.html',
+  styleUrls: ['./radio.component.css'],
+  providers: [{ provide: FieldComponent, useExisting: RadioComponent }],
 })
-export class RadioButtonComponent
+export class RadioComponent
   extends FieldComponent<any>
   implements OnInit {
   @Input() required: boolean;
