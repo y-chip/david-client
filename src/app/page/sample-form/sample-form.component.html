@@ -6,7 +6,7 @@
         label="文字列"
         placeholder="入力してください"
         name="sample.text"
-        [(value)]="sample.text"
+        [(value)]="sample.fieldText"
         [required]="true"
       ></dvd-field-text>
     </dvd-column>
@@ -17,7 +17,7 @@
         label="長い文字列"
         placeholder="入力してください"
         name="sample.longText"
-        [(value)]="sample.longText"
+        [(value)]="sample.fieldTextarea"
       ></dvd-field-textarea>
     </dvd-column>
   </dvd-row>
@@ -27,7 +27,7 @@
         label="数値"
         placeholder="入力してください"
         name="sample.number"
-        [(value)]="sample.number"
+        [(value)]="sample.fieldNumber"
       ></dvd-field-number>
     </dvd-column>
   </dvd-row>
@@ -35,7 +35,7 @@
     <dvd-column>
       <dvd-field-switch
         label="真偽値"
-        [(value)]="sample.bool"
+        [(value)]="sample.fieldSwitch"
       ></dvd-field-switch>
     </dvd-column>
   </dvd-row>
@@ -43,7 +43,7 @@
     <dvd-column>
       <dvd-field-date
         label="日付"
-        [(value)]="sample.dateVal"
+        [(value)]="sample.fieldDate"
       ></dvd-field-date>
     </dvd-column>
   </dvd-row>
@@ -52,9 +52,9 @@
       <dvd-field-select
         label="ドロップダウン"
         [options]="master"
-        optionLabelProperty="text"
+        optionLabelProperty="name"
         optionValueProperty="code"
-        [(value)]="sample.selectVal"
+        [(value)]="sample.fieldSelect"
       ></dvd-field-select>
     </dvd-column>
   </dvd-row>
