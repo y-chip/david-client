@@ -9,7 +9,7 @@ import { MaterialModule } from '../material/material.module';
 import { RowComponent } from './row/row.component';
 import { ColumnComponent } from './column/column.component';
 import { FieldComponent } from './field/field.component';
-import { InputTextComponent } from './field/input-text/input-text.component';
+import { FieldTextComponent } from './field/text/field-text.component';
 import { InputTextareaComponent } from './field/input-textarea/input-textarea.component';
 import { FieldNumberComponent } from './field/number/field-number.component';
 import { ButtonComponent } from './button/button.component';
@@ -25,7 +25,7 @@ import { RadioButtonComponent } from './field/radio-button/radio-button.componen
     ColumnComponent,
     BannerComponent,
     FieldComponent,
-    InputTextComponent,
+    FieldTextComponent,
     InputTextareaComponent,
     FieldNumberComponent,
     SlideToggleComponent,
@@ -46,7 +46,7 @@ import { RadioButtonComponent } from './field/radio-button/radio-button.componen
     ColumnComponent,
     BannerComponent,
     FieldComponent,
-    InputTextComponent,
+    FieldTextComponent,
     InputTextareaComponent,
     FieldNumberComponent,
     SlideToggleComponent,
