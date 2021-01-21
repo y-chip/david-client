@@ -16,7 +16,7 @@ import { ButtonComponent } from './button/button.component';
 import { BannerComponent } from './banner/banner.component';
 import { SlideToggleComponent } from './field/slide-toggle/slide-toggle.component';
 import { FieldDateComponent } from './field/date/field-date.component';
-import { SelectComponent } from './field/select/select.component';
+import { FieldSelectComponent } from './field/select/field-select.component';
 import { FieldRadioComponent } from './field/radio/field-radio.component';
 
 @NgModule({
@@ -30,7 +30,7 @@ import { FieldRadioComponent } from './field/radio/field-radio.component';
     FieldNumberComponent,
     SlideToggleComponent,
     FieldDateComponent,
-    SelectComponent,
+    FieldSelectComponent,
     FieldRadioComponent,
     ButtonComponent,
   ],
@@ -51,7 +51,7 @@ import { FieldRadioComponent } from './field/radio/field-radio.component';
     FieldNumberComponent,
     SlideToggleComponent,
     FieldDateComponent,
-    SelectComponent,
+    FieldSelectComponent,
     FieldRadioComponent,
     ButtonComponent,
   ],

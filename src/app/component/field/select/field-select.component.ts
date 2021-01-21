@@ -3,12 +3,12 @@ import { FieldComponent } from '../field.component';
 
 @Component({
   // tslint:disable-next-line:component-selector
-  selector: 'dvd-select',
-  templateUrl: './select.component.html',
-  styleUrls: ['./select.component.css'],
-  providers: [{ provide: FieldComponent, useExisting: SelectComponent }],
+  selector: 'dvd-field-select',
+  templateUrl: './field-select.component.html',
+  styleUrls: ['./field-select.component.css'],
+  providers: [{ provide: FieldComponent, useExisting: FieldSelectComponent }],
 })
-export class SelectComponent extends FieldComponent<any> implements OnInit {
+export class FieldSelectComponent extends FieldComponent<any> implements OnInit {
   @Input() placeholder: string;
   @Input() required: boolean;
   @Input() options: { [index: string]: any }[];
