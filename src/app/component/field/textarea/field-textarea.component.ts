@@ -3,12 +3,12 @@ import { FieldComponent } from '../field.component';
 
 @Component({
   // tslint:disable-next-line:component-selector
-  selector: 'dvd-input-textarea',
-  templateUrl: './input-textarea.component.html',
-  styleUrls: ['./input-textarea.component.css'],
-  providers: [{ provide: FieldComponent, useExisting: InputTextareaComponent }],
+  selector: 'dvd-field-textarea',
+  templateUrl: './field-textarea.component.html',
+  styleUrls: ['./field-textarea.component.css'],
+  providers: [{ provide: FieldComponent, useExisting: FieldTextareaComponent }],
 })
-export class InputTextareaComponent
+export class FieldTextareaComponent
   extends FieldComponent<string>
   implements OnInit {
   @Input() placeholder: string;
