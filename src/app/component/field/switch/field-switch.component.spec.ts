@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SlideToggleComponent } from './slide-toggle.component';
+import { FieldSwitchComponent } from './field-switch.component';
 
 describe('SlideToggleComponent', () => {
-  let component: SlideToggleComponent;
-  let fixture: ComponentFixture<SlideToggleComponent>;
+  let component: FieldSwitchComponent;
+  let fixture: ComponentFixture<FieldSwitchComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [SlideToggleComponent],
+      declarations: [FieldSwitchComponent],
     }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SlideToggleComponent);
+    fixture = TestBed.createComponent(FieldSwitchComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -3,12 +3,12 @@ import { FieldComponent } from '../field.component';
 
 @Component({
   // tslint:disable-next-line:component-selector
-  selector: 'dvd-slide-toggle',
-  templateUrl: './slide-toggle.component.html',
-  styleUrls: ['./slide-toggle.component.css'],
-  providers: [{ provide: FieldComponent, useExisting: SlideToggleComponent }],
+  selector: 'dvd-field-switch',
+  templateUrl: './field-switch.component.html',
+  styleUrls: ['./field-switch.component.css'],
+  providers: [{ provide: FieldComponent, useExisting: FieldSwitchComponent }],
 })
-export class SlideToggleComponent
+export class FieldSwitchComponent
   extends FieldComponent<boolean>
   implements OnInit {
   constructor() {

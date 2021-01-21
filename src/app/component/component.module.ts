@@ -14,7 +14,7 @@ import { FieldTextareaComponent } from './field/textarea/field-textarea.componen
 import { FieldNumberComponent } from './field/number/field-number.component';
 import { ButtonComponent } from './button/button.component';
 import { BannerComponent } from './banner/banner.component';
-import { SlideToggleComponent } from './field/slide-toggle/slide-toggle.component';
+import { FieldSwitchComponent } from './field/switch/field-switch.component';
 import { FieldDateComponent } from './field/date/field-date.component';
 import { FieldSelectComponent } from './field/select/field-select.component';
 import { FieldRadioComponent } from './field/radio/field-radio.component';
@@ -28,7 +28,7 @@ import { FieldRadioComponent } from './field/radio/field-radio.component';
     FieldTextComponent,
     FieldTextareaComponent,
     FieldNumberComponent,
-    SlideToggleComponent,
+    FieldSwitchComponent,
     FieldDateComponent,
     FieldSelectComponent,
     FieldRadioComponent,
@@ -49,7 +49,7 @@ import { FieldRadioComponent } from './field/radio/field-radio.component';
     FieldTextComponent,
     FieldTextareaComponent,
     FieldNumberComponent,
-    SlideToggleComponent,
+    FieldSwitchComponent,
     FieldDateComponent,
     FieldSelectComponent,
     FieldRadioComponent,
