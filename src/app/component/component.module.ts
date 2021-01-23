@@ -18,6 +18,7 @@ import { FieldSwitchComponent } from './field/switch/field-switch.component';
 import { FieldDateComponent } from './field/date/field-date.component';
 import { FieldSelectComponent } from './field/select/field-select.component';
 import { FieldRadioComponent } from './field/radio/field-radio.component';
+import { FieldReadonlyComponent } from './field/readonly/field-readonly.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { FieldRadioComponent } from './field/radio/field-radio.component';
     FieldDateComponent,
     FieldSelectComponent,
     FieldRadioComponent,
+    FieldReadonlyComponent,
     ButtonComponent,
   ],
   imports: [
@@ -53,6 +55,7 @@ import { FieldRadioComponent } from './field/radio/field-radio.component';
     FieldDateComponent,
     FieldSelectComponent,
     FieldRadioComponent,
+    FieldReadonlyComponent,
     ButtonComponent,
   ],
 })
