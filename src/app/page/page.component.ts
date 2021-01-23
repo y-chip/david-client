@@ -4,7 +4,7 @@ import { BannerService } from '../service/banner/banner.service';
 import { SnackbarService } from '../service/snackbar/snackbar.service';
 import { ProgressSpinnerOverlayService } from '../service/progress-spinner-overlay/progress-spinner-overlay.service';
 import { ValidationError } from '@david/david-api';
-import { Observable } from 'rxjs';
+import { forkJoin, Observable } from 'rxjs';
 import { finalize } from 'rxjs/operators';
 
 @Component({
@@ -25,7 +25,7 @@ export class PageComponent {
     this.fields = null;
   }
 
-  protected http<T>(obs$: Observable<T>, next?: (value: T) => void): void {
+  protected http<T>(task: Observable<any>[]): void {
     this.bannerService.close();
 
     if (this.hasInvalidField()) {
@@ -34,9 +34,12 @@ export class PageComponent {
     }
 
     this.progressSpinnerOverlayService.show();
-    obs$
+    forkJoin(task)
       .pipe(finalize(() => this.progressSpinnerOverlayService.close()))
-      .subscribe(next, (error) => this.handleError(error));
+      .subscribe(
+        (response) => console.log(response),
+        (error) => this.handleError(error)
+      );
   }
 
   private hasInvalidField(): boolean {

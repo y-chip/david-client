@@ -6,6 +6,7 @@ import {
   Sample,
   SampleFormControllerService,
 } from '@david/david-api';
+import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-sample-form',
@@ -27,18 +28,28 @@ export class SampleFormComponent extends PageComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.http(this.sampleFormControllerService.get(), (sample) => {
-      this.sample = sample;
-    });
-    this.masterControllerService.get1().subscribe((master) => {
-      this.master = master;
-    });
+    this.http([
+      this.sampleFormControllerService.get().pipe(
+        tap((sample) => {
+          this.sample = sample;
+        })
+      ),
+      this.masterControllerService.get1().pipe(
+        tap((master) => {
+          this.master = master;
+        })
+      ),
+    ]);
   }
 
   save(): void {
-    this.http(this.sampleFormControllerService.save(this.sample), (sample) => {
-      this.sample = sample;
-      this.snackbarService.open('保存しました。');
-    });
+    this.http([
+      this.sampleFormControllerService.save(this.sample).pipe(
+        tap((sample) => {
+          this.sample = sample;
+          this.snackbarService.open('保存しました。');
+        })
+      ),
+    ]);
   }
 }
