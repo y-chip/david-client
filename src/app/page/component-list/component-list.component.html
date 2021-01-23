@@ -2,6 +2,16 @@
   <h1>Field</h1>
   <dvd-row>
     <dvd-column>
+      <dvd-field-switch label="すべてdisableにする" (change)="disabledAll($event)"></dvd-field-switch>
+    </dvd-column>
+  </dvd-row>
+  <dvd-row>
+    <dvd-column>
+      <dvd-field-switch label="すべてreadonlyにする" (change)="readonlyAll($event)"></dvd-field-switch>
+    </dvd-column>
+  </dvd-row>
+  <dvd-row>
+    <dvd-column>
       <dvd-field-text label="text"></dvd-field-text>
     </dvd-column>
   </dvd-row>
