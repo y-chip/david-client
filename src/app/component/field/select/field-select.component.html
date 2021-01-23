@@ -1,16 +1,21 @@
-<mat-form-field appearance="outline" [style.width]="width">
-  <mat-label>{{ label }}</mat-label>
-  <mat-select
-    #input="ngModel"
-    [ngModel]="value"
-    (ngModelChange)="onChangeValue($event)"
-    [disabled]="disabled"
-    [placeholder]="placeholder"
-    [required]="required"
-  >
-    <mat-option *ngFor="let o of options" [value]="o[optionValueProperty]">
-      {{ o[optionLabelProperty] }}
-    </mat-option>
-  </mat-select>
-  <mat-error *ngIf="input.errors?.required"> 入力してください。 </mat-error>
-</mat-form-field>
+<ng-container *ngIf="readonly; else field">
+  <dvd-field-readonly [label]="label" [value]="getSelectedLabel()"></dvd-field-readonly>
+</ng-container>
+<ng-template #field>
+  <mat-form-field appearance="outline" [style.width]="width">
+    <mat-label>{{ label }}</mat-label>
+    <mat-select
+      #input="ngModel"
+      [ngModel]="value"
+      (ngModelChange)="onChangeValue($event)"
+      [disabled]="disabled"
+      [placeholder]="placeholder"
+      [required]="required"
+    >
+      <mat-option *ngFor="let o of options" [value]="o[optionValueProperty]">
+        {{ o[optionLabelProperty] }}
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf="input.errors?.required"> 入力してください。 </mat-error>
+  </mat-form-field>
+</ng-template>

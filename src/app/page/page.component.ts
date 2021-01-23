@@ -69,6 +69,12 @@ export class PageComponent {
     });
   }
 
+  protected setReadonlyAll(readonly: boolean): void {
+    this.fields?.forEach((f) => {
+      f.readonly = readonly;
+    });
+  }
+
   private handleError(response: any): void {
     if (response.status === 400 && this.isValidationError(response.error)) {
       if (response.error.message != null) {

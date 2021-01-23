@@ -17,6 +17,7 @@ export class FieldComponent<T> {
   @Input() value: T | null;
   @Output() valueChange = new EventEmitter<T>();
   @Input() disabled: boolean;
+  @Input() readonly: boolean;
   // tslint:disable-next-line:no-output-native
   @Output()
   change: EventEmitter<T> = new EventEmitter<T>();
@@ -28,6 +29,7 @@ export class FieldComponent<T> {
     this.name = '';
     this.value = null;
     this.disabled = false;
+    this.readonly = false;
     this.input = null;
   }
 }

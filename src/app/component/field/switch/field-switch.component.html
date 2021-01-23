@@ -1,9 +1,14 @@
-<div [style.width]="width">
-  <mat-slide-toggle
-    #input="ngModel"
-    [ngModel]="value"
-    (ngModelChange)="onChangeValue($event)"
-    [disabled]="disabled"
-    >{{ label }}</mat-slide-toggle
-  >
-</div>
+<ng-container *ngIf="readonly; else field">
+  <dvd-field-readonly label="" [value]="label"></dvd-field-readonly>
+</ng-container>
+<ng-template #field>
+  <div [style.width]="width">
+    <mat-slide-toggle
+      #input="ngModel"
+      [ngModel]="value"
+      (ngModelChange)="onChangeValue($event)"
+      [disabled]="disabled"
+      >{{ label }}</mat-slide-toggle
+    >
+  </div>
+</ng-template>

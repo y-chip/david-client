@@ -1,14 +1,19 @@
-<mat-form-field appearance="outline" [style.width]="width">
-  <mat-label>{{ label }}</mat-label>
-  <input
-    #input="ngModel"
-    matInput
-    type="text"
-    [ngModel]="value"
-    (ngModelChange)="onChangeValue($event)"
-    [disabled]="disabled"
-    [placeholder]="placeholder"
-    [required]="required"
-  />
-  <mat-error *ngIf="input.errors?.required"> 入力してください。 </mat-error>
-</mat-form-field>
+<ng-container *ngIf="readonly; else field">
+  <dvd-field-readonly [label]="label" [value]="value"></dvd-field-readonly>
+</ng-container>
+<ng-template #field>
+  <mat-form-field appearance="outline" [style.width]="width">
+    <mat-label>{{ label }}</mat-label>
+    <input
+      #input="ngModel"
+      matInput
+      type="text"
+      [ngModel]="value"
+      (ngModelChange)="onChangeValue($event)"
+      [disabled]="disabled"
+      [placeholder]="placeholder"
+      [required]="required"
+    />
+    <mat-error *ngIf="input.errors?.required"> 入力してください。 </mat-error>
+  </mat-form-field>
+</ng-template>

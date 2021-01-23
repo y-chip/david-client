@@ -28,4 +28,8 @@ export class FieldNumberComponent
     this.valueChange.emit(n);
     this.change.emit(n);
   }
+
+  getStringValue(): string {
+    return `${this.value}`;
+  }
 }

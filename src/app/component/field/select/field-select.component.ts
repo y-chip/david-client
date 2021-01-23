@@ -33,4 +33,11 @@ export class FieldSelectComponent
     this.valueChange.emit(value);
     this.change.emit(value);
   }
+
+  getSelectedLabel(): string {
+    const selected = this.options.find(
+      (o) => o[this.optionValueProperty] === this.value
+    );
+    return selected?.[this.optionLabelProperty];
+  }
 }
