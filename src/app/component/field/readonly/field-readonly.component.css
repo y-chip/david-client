@@ -11,4 +11,5 @@
 }
 .value {
   padding: 8px 0.75em 8px 0.75em;
+  white-space: pre-wrap;
 }
