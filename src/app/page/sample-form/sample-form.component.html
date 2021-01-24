@@ -33,14 +33,6 @@
   </dvd-row>
   <dvd-row>
     <dvd-column>
-      <dvd-field-switch
-        label="SWITCH"
-        [(value)]="sample.fieldSwitch"
-      ></dvd-field-switch>
-    </dvd-column>
-  </dvd-row>
-  <dvd-row>
-    <dvd-column>
       <dvd-field-date
         label="DATE"
         [(value)]="sample.fieldDate"
@@ -67,6 +59,14 @@
         optionValueProperty="code"
         [(value)]="sample.fieldRadio"
       ></dvd-field-radio>
+    </dvd-column>
+  </dvd-row>
+  <dvd-row>
+    <dvd-column>
+      <dvd-field-switch
+        label="SWITCH"
+        [(value)]="sample.fieldSwitch"
+      ></dvd-field-switch>
     </dvd-column>
   </dvd-row>
   <dvd-row>
