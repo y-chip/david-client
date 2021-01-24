@@ -3,9 +3,13 @@
     <div class="label">{{ label }}</div>
   </div>
   <ng-container *ngIf="value == null; else fieldValue">
-    <div class="value value-empty">未設定</div>
+    <div class="value value-empty" [class.line-through]="lineThrough">
+      未設定
+    </div>
   </ng-container>
   <ng-template #fieldValue>
-    <div class="value">{{ value }}</div>
+    <div class="value" [class.line-through]="lineThrough">
+      {{ value }}
+    </div>
   </ng-template>
 </div>

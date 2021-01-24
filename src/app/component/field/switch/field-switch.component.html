@@ -1,5 +1,9 @@
 <ng-container *ngIf="readonly; else field">
-  <dvd-field-readonly label="" [value]="label"></dvd-field-readonly>
+  <dvd-field-readonly
+    label=""
+    [value]="label"
+    [lineThrough]="value == null || value == false"
+  ></dvd-field-readonly>
 </ng-container>
 <ng-template #field>
   <div [style.width]="width">

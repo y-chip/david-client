@@ -16,3 +16,6 @@
 .value-empty {
   color: rgba(0, 0, 0, 0.6);
 }
+.line-through {
+  text-decoration: line-through;
+}

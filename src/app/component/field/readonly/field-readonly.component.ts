@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FieldComponent } from '../field.component';
 
 @Component({
@@ -11,8 +11,11 @@ import { FieldComponent } from '../field.component';
 export class FieldReadonlyComponent
   extends FieldComponent<string>
   implements OnInit {
+  @Input() lineThrough: boolean;
+
   constructor() {
     super();
+    this.lineThrough = false;
   }
 
   ngOnInit(): void {}
