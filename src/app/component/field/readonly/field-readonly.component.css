@@ -13,3 +13,6 @@
   padding: 8px 0.75em 8px 0.75em;
   white-space: pre-wrap;
 }
+.value-empty {
+  color: rgba(0, 0, 0, 0.6);
+}

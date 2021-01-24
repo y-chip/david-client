@@ -29,7 +29,10 @@ export class FieldNumberComponent
     this.change.emit(n);
   }
 
-  getStringValue(): string {
+  getStringValue(): string | null {
+    if (this.value == null) {
+      return null;
+    }
     return `${this.value}`;
   }
 }

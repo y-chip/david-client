@@ -2,5 +2,10 @@
   <div class="label-container" *ngIf="label != ''">
     <div class="label">{{ label }}</div>
   </div>
-  <div class="value">{{ value }}</div>
+  <ng-container *ngIf="value == null; else fieldValue">
+    <div class="value value-empty">未設定</div>
+  </ng-container>
+  <ng-template #fieldValue>
+    <div class="value">{{ value }}</div>
+  </ng-template>
 </div>
