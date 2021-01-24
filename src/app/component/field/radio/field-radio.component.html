@@ -5,8 +5,10 @@
   ></dvd-field-readonly>
 </ng-container>
 <ng-template #field>
-  <div [style.width]="width">
-    <label>{{ label }}</label>
+  <div class="field" [style.width]="width">
+    <div class="label-container">
+      <div class="label">{{ label }}</div>
+    </div>
     <mat-radio-group
       #input="ngModel"
       [ngModel]="value"
