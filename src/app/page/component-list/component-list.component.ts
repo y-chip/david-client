@@ -13,11 +13,16 @@ export class ComponentListComponent extends PageComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  disabledAll(disable: boolean): void {
-    this.setDisabledAll(disable);
+  disabledAll(): void {
+    this.setDisabledAll(true);
   }
 
-  readonlyAll(readonly: boolean): void {
-    this.setReadonlyAll(readonly);
+  readonlyAll(): void {
+    this.setReadonlyAll(true);
+  }
+
+  resetDisabledReadonly(): void {
+    this.setDisabledAll(false);
+    this.setReadonlyAll(false);
   }
 }
