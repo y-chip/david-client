@@ -1,5 +1,8 @@
 <ng-container *ngIf="readonly; else field">
-  <dvd-field-readonly [label]="label" [value]="getSelectedLabel()"></dvd-field-readonly>
+  <dvd-field-readonly
+    [label]="label"
+    [value]="getSelectedLabel()"
+  ></dvd-field-readonly>
 </ng-container>
 
 <ng-template #field>
