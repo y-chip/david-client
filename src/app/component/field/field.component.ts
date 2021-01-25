@@ -7,11 +7,13 @@ import {
 } from '@angular/core';
 import { NgModel } from '@angular/forms';
 
+type FieldWidth = '10rem' | '20rem' | '30rem' | '40rem';
+
 @Component({
   template: ``,
 })
 export class FieldComponent<T> {
-  @Input() width: string;
+  @Input() width: FieldWidth;
   @Input() label: string;
   @Input() name: string;
   @Input() value: T | null;
