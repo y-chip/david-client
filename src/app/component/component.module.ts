@@ -19,12 +19,14 @@ import { FieldDateComponent } from './field/date/field-date.component';
 import { FieldSelectComponent } from './field/select/field-select.component';
 import { FieldRadioComponent } from './field/radio/field-radio.component';
 import { FieldReadonlyComponent } from './field/readonly/field-readonly.component';
+import { DividerComponent } from './divider/divider.component';
 
 @NgModule({
   declarations: [
     RowComponent,
     ColumnComponent,
     BannerComponent,
+    DividerComponent,
     FieldComponent,
     FieldTextComponent,
     FieldTextareaComponent,
@@ -47,6 +49,7 @@ import { FieldReadonlyComponent } from './field/readonly/field-readonly.componen
     RowComponent,
     ColumnComponent,
     BannerComponent,
+    DividerComponent,
     FieldComponent,
     FieldTextComponent,
     FieldTextareaComponent,
