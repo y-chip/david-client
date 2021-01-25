@@ -10,18 +10,6 @@
         [required]="true"
       ></dvd-field-text>
     </dvd-column>
-  </dvd-row>
-  <dvd-row>
-    <dvd-column>
-      <dvd-field-textarea
-        label="TEXTAREA"
-        placeholder="入力してください"
-        name="sample.fieldTextarea"
-        [(value)]="sample.fieldTextarea"
-      ></dvd-field-textarea>
-    </dvd-column>
-  </dvd-row>
-  <dvd-row>
     <dvd-column>
       <dvd-field-number
         label="NUMBER"
@@ -33,13 +21,22 @@
   </dvd-row>
   <dvd-row>
     <dvd-column>
+      <dvd-field-textarea
+        label="TEXTAREA"
+        placeholder="入力してください"
+        name="sample.fieldTextarea"
+        [(value)]="sample.fieldTextarea"
+        width="40rem"
+      ></dvd-field-textarea>
+    </dvd-column>
+  </dvd-row>
+  <dvd-row>
+    <dvd-column>
       <dvd-field-date
         label="DATE"
         [(value)]="sample.fieldDate"
       ></dvd-field-date>
     </dvd-column>
-  </dvd-row>
-  <dvd-row>
     <dvd-column>
       <dvd-field-select
         label="SELECT"
