@@ -6,17 +6,19 @@
 </ng-container>
 
 <ng-template #field>
-  <mat-form-field appearance="outline" [style.width]="width">
-    <mat-label>{{ label }}</mat-label>
-    <input
-      #input="ngModel"
-      matInput
-      type="number"
-      [ngModel]="value"
-      (ngModelChange)="onChangeValue($event)"
-      [disabled]="disabled"
-      [placeholder]="placeholder"
-      [required]="required"
-    />
-  </mat-form-field>
+  <div class="component-margin-horizontal" [style.width]="width">
+    <mat-form-field appearance="outline" style="width: 100%">
+      <mat-label>{{ label }}</mat-label>
+      <input
+        #input="ngModel"
+        matInput
+        type="number"
+        [ngModel]="value"
+        (ngModelChange)="onChangeValue($event)"
+        [disabled]="disabled"
+        [placeholder]="placeholder"
+        [required]="required"
+      />
+    </mat-form-field>
+  </div>
 </ng-template>

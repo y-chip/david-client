@@ -1,15 +1,17 @@
-<div class="component-padding-vertical" [style.width]="width">
-  <div class="label-container" *ngIf="label != ''">
-    <div class="label">{{ label }}</div>
+<div class="component-margin-horizontal" [style.width]="width">
+  <div class="component-padding-vertical" style="width: 100%">
+    <div class="label-container" *ngIf="label != ''">
+      <div class="label">{{ label }}</div>
+    </div>
+    <ng-container *ngIf="value == null; else fieldValue">
+      <div class="value value-empty" [class.line-through]="lineThrough">
+        未設定
+      </div>
+    </ng-container>
+    <ng-template #fieldValue>
+      <div class="value" [class.line-through]="lineThrough">
+        {{ value }}
+      </div>
+    </ng-template>
   </div>
-  <ng-container *ngIf="value == null; else fieldValue">
-    <div class="value value-empty" [class.line-through]="lineThrough">
-      未設定
-    </div>
-  </ng-container>
-  <ng-template #fieldValue>
-    <div class="value" [class.line-through]="lineThrough">
-      {{ value }}
-    </div>
-  </ng-template>
 </div>

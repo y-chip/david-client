@@ -6,24 +6,26 @@
 </ng-container>
 
 <ng-template #field>
-  <div class="component-padding-vertical" [style.width]="width">
-    <div class="label-container">
-      <div class="label">{{ label }}</div>
-    </div>
-    <mat-radio-group
-      #input="ngModel"
-      [ngModel]="value"
-      (ngModelChange)="onChangeValue($event)"
-      [disabled]="disabled"
-      [required]="required"
-    >
-      <mat-radio-button
-        *ngFor="let o of options"
-        [value]="o[optionValueProperty]"
+  <div class="component-margin-horizontal" [style.width]="width">
+    <div class="component-padding-vertical" style="width: 100%">
+      <div class="label-container">
+        <div class="label">{{ label }}</div>
+      </div>
+      <mat-radio-group
+        #input="ngModel"
+        [ngModel]="value"
+        (ngModelChange)="onChangeValue($event)"
+        [disabled]="disabled"
+        [required]="required"
       >
-        {{ o[optionLabelProperty] }}
-      </mat-radio-button>
-    </mat-radio-group>
-    <mat-error *ngIf="input.errors?.required"> 入力してください。 </mat-error>
+        <mat-radio-button
+          *ngFor="let o of options"
+          [value]="o[optionValueProperty]"
+        >
+          {{ o[optionLabelProperty] }}
+        </mat-radio-button>
+      </mat-radio-group>
+      <mat-error *ngIf="input.errors?.required"> 入力してください。 </mat-error>
+    </div>
   </div>
 </ng-template>

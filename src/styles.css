@@ -11,3 +11,8 @@ body {
 .component-padding-vertical {
   padding-bottom: 1.34375em;
 }
+.component-margin-horizontal {
+  box-sizing: border-box;
+  padding-left: 0.625rem;
+  padding-right: 0.625rem;
+}
