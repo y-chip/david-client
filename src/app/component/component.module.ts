@@ -20,6 +20,7 @@ import { FieldSelectComponent } from './field/select/field-select.component';
 import { FieldRadioComponent } from './field/radio/field-radio.component';
 import { FieldReadonlyComponent } from './field/readonly/field-readonly.component';
 import { DividerComponent } from './divider/divider.component';
+import { HeadingH1Component } from './heading/h1/heading-h1.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { DividerComponent } from './divider/divider.component';
     ColumnComponent,
     BannerComponent,
     DividerComponent,
+    HeadingH1Component,
     FieldComponent,
     FieldTextComponent,
     FieldTextareaComponent,
@@ -50,6 +52,7 @@ import { DividerComponent } from './divider/divider.component';
     ColumnComponent,
     BannerComponent,
     DividerComponent,
+    HeadingH1Component,
     FieldComponent,
     FieldTextComponent,
     FieldTextareaComponent,
