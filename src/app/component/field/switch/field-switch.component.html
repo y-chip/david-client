@@ -7,15 +7,16 @@
 </ng-container>
 
 <ng-template #field>
-  <div class="component-margin-horizontal" [style.width]="width">
-    <div class="component-padding-vertical" style="width: 100%">
-      <mat-slide-toggle
-        #input="ngModel"
-        [ngModel]="value"
-        (ngModelChange)="onChangeValue($event)"
-        [disabled]="disabled"
-        >{{ label }}</mat-slide-toggle
-      >
-    </div>
+  <div
+    class="component-margin-horizontal component-padding-vertical"
+    [style.width]="width"
+  >
+    <mat-slide-toggle
+      #input="ngModel"
+      [ngModel]="value"
+      (ngModelChange)="onChangeValue($event)"
+      [disabled]="disabled"
+      >{{ label }}</mat-slide-toggle
+    >
   </div>
 </ng-template>
