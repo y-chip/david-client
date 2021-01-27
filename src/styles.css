@@ -8,6 +8,9 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+.page {
+  padding: 1.25rem;
+}
 .component-padding-vertical {
   padding-bottom: 1.34375em;
 }
