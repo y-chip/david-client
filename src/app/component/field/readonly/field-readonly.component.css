@@ -1,18 +1,22 @@
 .label-container {
   padding: 0 0.75em 0 0.75em;
 }
+
 .label {
   transform: scale(0.75);
   transform-origin: left bottom;
   color: rgba(0, 0, 0, 0.6);
 }
+
 .value {
   padding: 8px 0.75em 8px 0.75em;
   white-space: pre-wrap;
 }
+
 .value-empty {
   color: rgba(0, 0, 0, 0.6);
 }
+
 .line-through {
   text-decoration: line-through;
 }

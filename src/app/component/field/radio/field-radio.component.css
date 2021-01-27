@@ -1,15 +1,18 @@
 .label-container {
   padding: 0 0.75em 0 0.75em;
 }
+
 .label {
   transform: scale(0.75);
   transform-origin: left bottom;
   color: rgba(0, 0, 0, 0.6);
 }
+
 mat-radio-group {
   display: flex;
   flex-direction: column;
 }
+
 mat-radio-button {
   padding: 8px 0 0 0;
 }
