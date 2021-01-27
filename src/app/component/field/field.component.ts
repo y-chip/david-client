@@ -7,7 +7,7 @@ import {
 } from '@angular/core';
 import { NgModel } from '@angular/forms';
 
-type FieldWidth = '10rem' | '20rem' | '30rem' | '40rem';
+type FieldWidth = '160px' | '320px' | '480px' | '640px';
 
 @Component({
   template: ``,
@@ -26,7 +26,7 @@ export class FieldComponent<T> {
   @ViewChild('input') input: NgModel | null;
 
   constructor() {
-    this.width = '20rem';
+    this.width = '320px';
     this.label = 'label';
     this.name = '';
     this.value = null;
