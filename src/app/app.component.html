@@ -1,7 +1,7 @@
 <div fxLayout="column" class="container">
   <mat-toolbar
     color="primary"
-    [class.position-fixed]="isSmallDisplay()"
+    [style.position]="isSmallDisplay() ? 'fixed' : 'static' // stay on top when scroll"
     class="mat-elevation-z6"
   >
     <button mat-icon-button (click)="sidenav.toggle()">
