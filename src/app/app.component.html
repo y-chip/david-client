@@ -11,7 +11,7 @@
   </mat-toolbar>
 
   <mat-sidenav-container
-    [style.marginTop.px]="isSmallDisplay() ? 56 : 0 // for position-fixed"
+    [style.marginTop.px]="isSmallDisplay() ? 56 : 0 // for position fixed"
     [fxFlex]="
       isSmallDisplay()
         ? '1 0 auto'
@@ -21,7 +21,7 @@
     <mat-sidenav
       #sidenav
       [mode]="isSmallDisplay() ? 'over' : 'side'"
-      [fixedInViewport]="isSmallDisplay()"
+      [fixedInViewport]="isSmallDisplay() // for comfortable scroll"
       fixedTopGap="56"
       class="mat-elevation-z3"
     >
