@@ -3,7 +3,7 @@
 </ng-container>
 
 <ng-template #field>
-  <div class="component-margin-horizontal" [style.width]="width">
+  <div class="component-margin-horizontal" [style.width]="getWidth()">
     <mat-form-field appearance="outline" style="width: 100%">
       <mat-label>{{ label }}</mat-label>
       <input

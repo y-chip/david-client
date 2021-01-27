@@ -34,4 +34,8 @@ export class FieldComponent<T> {
     this.readonly = false;
     this.input = null;
   }
+
+  getWidth(): string {
+    return this.width;
+  }
 }

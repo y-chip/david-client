@@ -9,7 +9,7 @@
 <ng-template #field>
   <div
     class="component-margin-horizontal component-padding-vertical"
-    [style.width]="width"
+    [style.width]="getWidth()"
   >
     <mat-slide-toggle
       #input="ngModel"
