@@ -1,7 +1,7 @@
 <div fxLayout="column" class="container">
   <mat-toolbar
     color="primary"
-    [class.toolbar-mobile]="isSmallDisplay()"
+    [class.position-fixed]="isSmallDisplay()"
     class="mat-elevation-z6"
   >
     <button mat-icon-button (click)="sidenav.toggle()">
@@ -11,8 +11,8 @@
   </mat-toolbar>
 
   <mat-sidenav-container
+    [style.marginTop.px]="isSmallDisplay() ? 56 : 0 // for position-fixed"
     [fxFlex]="isSmallDisplay() ? '1 0 auto' : '1 1 0'"
-    [style.marginTop.px]="isSmallDisplay() ? 56 : 0"
   >
     <mat-sidenav
       #sidenav

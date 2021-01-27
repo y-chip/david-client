@@ -6,7 +6,8 @@
   right: 0;
 }
 
-.toolbar-mobile {
+.position-fixed {
+  /* スクロールしても、toolbarが表示されるようにする。 */
   position: fixed;
 }
 
