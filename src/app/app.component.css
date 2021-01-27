@@ -15,11 +15,11 @@ h1.app-name {
 }
 
 mat-toolbar {
-  z-index: 3;
+  z-index: 5;
 }
 
 mat-sidenav {
-  z-index: 2;
+  z-index: 4;
 }
 
 mat-sidenav-content {
