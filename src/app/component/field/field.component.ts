@@ -4,6 +4,7 @@ import {
   Output,
   EventEmitter,
   ViewChild,
+  HostListener,
 } from '@angular/core';
 import { NgModel } from '@angular/forms';
 
@@ -24,6 +25,7 @@ export class FieldComponent<T> {
   @Output()
   change: EventEmitter<T> = new EventEmitter<T>();
   @ViewChild('input') input: NgModel | null;
+  private innerWidth: number;
 
   constructor() {
     this.width = '320px';
@@ -33,9 +35,21 @@ export class FieldComponent<T> {
     this.disabled = false;
     this.readonly = false;
     this.input = null;
+    this.innerWidth = window.innerWidth;
   }
 
   getWidth(): string {
+    const w = +this.width.replace('px', '');
+
+    if (this.innerWidth < w) {
+      const pageWhiteSpace = 40;
+      return `${this.innerWidth - pageWhiteSpace}px`;
+    }
     return this.width;
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(): void {
+    this.innerWidth = window.innerWidth;
   }
 }
