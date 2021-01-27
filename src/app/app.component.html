@@ -12,7 +12,11 @@
 
   <mat-sidenav-container
     [style.marginTop.px]="isSmallDisplay() ? 56 : 0 // for position-fixed"
-    [fxFlex]="isSmallDisplay() ? '1 0 auto' : '1 1 0'"
+    [fxFlex]="
+      isSmallDisplay()
+        ? '1 0 auto'
+        : '1 1 0' // decide scrolling element <body> or <mat-sidenav-content>
+    "
   >
     <mat-sidenav
       #sidenav
