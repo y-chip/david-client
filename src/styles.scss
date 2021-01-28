@@ -1,5 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 
+@use "@material/theme" with (
+  $primary: #33691E,
+  $secondary: #F9A825,
+);
+@use "@material/banner/styles";
+@use "@material/button";
+@include button.core-styles;
+
 html,
 body {
   height: 100%;
