@@ -7,21 +7,20 @@ import { MediaMatcher } from '@angular/cdk/layout';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnDestroy {
-  private mobileQuery: MediaQueryList;
-
-  private readonly mobileQueryListener: () => void;
+  private queryList: MediaQueryList;
+  private readonly onChangeQueryList: () => void;
 
   constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
-    this.mobileQuery = media.matchMedia('(max-width: 600px)');
-    this.mobileQueryListener = () => changeDetectorRef.detectChanges();
-    this.mobileQuery.addEventListener('change', this.mobileQueryListener);
+    this.queryList = media.matchMedia('(max-width: 600px)');
+    this.onChangeQueryList = () => changeDetectorRef.detectChanges();
+    this.queryList.addEventListener('change', this.onChangeQueryList);
   }
 
   ngOnDestroy(): void {
-    this.mobileQuery.removeEventListener('change', this.mobileQueryListener);
+    this.queryList.removeEventListener('change', this.onChangeQueryList);
   }
 
   isSmallDisplay(): boolean {
-    return this.mobileQuery.matches;
+    return this.queryList.matches;
   }
 }
