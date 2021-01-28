@@ -33,7 +33,7 @@
 
     <mat-sidenav-content>
       <dvd-banner></dvd-banner>
-      <router-outlet></router-outlet>
+      <router-outlet style="display: block" [style.marginTop.px]="marginTopForBanner"></router-outlet>
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>
