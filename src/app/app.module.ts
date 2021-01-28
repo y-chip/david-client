@@ -13,6 +13,8 @@ import { SampleFormComponent } from './page/sample-form/sample-form.component';
 import { PageComponent } from './page/page.component';
 import { MAT_DATE_LOCALE, MAT_DATE_FORMATS } from '@angular/material/core';
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
+import { ApiModule, Configuration } from '@david/david-api';
+import { environment } from './../environments/environment';
 
 export const DATE_FORMATS = {
   parse: {
@@ -41,6 +43,11 @@ export const DATE_FORMATS = {
     MaterialModule,
     MatMomentDateModule,
     ComponentModule,
+    ApiModule.forRoot(() => {
+      return new Configuration({
+        basePath: environment.basePath,
+      });
+    }),
   ],
   providers: [
     { provide: MAT_DATE_LOCALE, useValue: 'ja-JP' },
