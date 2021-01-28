@@ -8,7 +8,7 @@ import { AppService } from '../../service/app/app.service';
   // tslint:disable-next-line:component-selector
   selector: 'dvd-banner',
   templateUrl: './banner.component.html',
-  styleUrls: ['./banner.component.scss'],
+  styleUrls: ['./banner.component.css'],
 })
 export class BannerComponent implements OnInit {
   private banner: MDCBanner | null;
