@@ -21,3 +21,7 @@ mat-sidenav {
 mat-sidenav-content {
   z-index: 1;
 }
+
+router-outlet {
+  display: block;
+}
