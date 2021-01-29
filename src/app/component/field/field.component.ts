@@ -50,6 +50,6 @@ export class FieldComponent<T> {
 
   @HostListener('window:resize', ['$event'])
   onResize(): void {
-    this.scrollWidth = window.innerWidth;
+    this.scrollWidth = document.documentElement.scrollWidth;
   }
 }
