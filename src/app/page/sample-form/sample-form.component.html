@@ -1,6 +1,18 @@
 <div class="page">
   <dvd-heading-h1>Sample Form</dvd-heading-h1>
   <dvd-row>
+    <dvd-column>WindowInnerWidth : {{ getWindowInnerWidth() }}</dvd-column>
+  </dvd-row>
+  <dvd-row>
+    <dvd-column>ScreenWidth : {{ getScreenWidth() }}</dvd-column>
+  </dvd-row>
+  <dvd-row>
+    <dvd-column>DocumentDocumentElementClientWidth : {{ getDocumentDocumentElementClientWidth() }}</dvd-column>
+  </dvd-row>
+  <dvd-row>
+    <dvd-column>DocumentDocumentElementScrollWidth : {{ getDocumentDocumentElementScrollWidth() }}</dvd-column>
+  </dvd-row>
+  <dvd-row>
     <dvd-column>
       <dvd-field-text
         label="TEXT"

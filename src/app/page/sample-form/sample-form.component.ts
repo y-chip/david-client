@@ -52,4 +52,20 @@ export class SampleFormComponent extends PageComponent implements OnInit {
       ),
     ]);
   }
+
+  getWindowInnerWidth(): any {
+    return window.innerWidth;
+  }
+
+  getScreenWidth(): any {
+    return screen.width;
+  }
+
+  getDocumentDocumentElementClientWidth(): any {
+    return document.documentElement.clientWidth;
+  }
+
+  getDocumentDocumentElementScrollWidth(): any {
+    return document.documentElement.scrollWidth;
+  }
 }
