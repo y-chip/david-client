@@ -25,7 +25,7 @@ export class FieldComponent<T> {
   @Output()
   change: EventEmitter<T> = new EventEmitter<T>();
   @ViewChild('input') input: NgModel | null;
-  private innerWidth: number;
+  private scrollWidth: number;
 
   constructor() {
     this.width = '320px';
@@ -35,21 +35,21 @@ export class FieldComponent<T> {
     this.disabled = false;
     this.readonly = false;
     this.input = null;
-    this.innerWidth = window.innerWidth;
+    this.scrollWidth = document.documentElement.scrollWidth;
   }
 
   getWidth(): string {
     const w = +this.width.replace('px', '');
 
-    if (this.innerWidth < w) {
+    if (this.scrollWidth < w) {
       const pageWhiteSpace = 40;
-      return `${this.innerWidth - pageWhiteSpace}px`;
+      return `${this.scrollWidth - pageWhiteSpace}px`;
     }
     return this.width;
   }
 
   @HostListener('window:resize', ['$event'])
   onResize(): void {
-    this.innerWidth = window.innerWidth;
+    this.scrollWidth = window.innerWidth;
   }
 }
