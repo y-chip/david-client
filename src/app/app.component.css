@@ -10,13 +10,13 @@ h1.app-name {
   margin-left: 8px;
 }
 
-dvd-banner {
-  z-index: 5;
+mat-toolbar {
+  z-index: 6;
   position: static;
 }
 
-mat-toolbar {
-  z-index: 6;
+dvd-banner {
+  z-index: 5;
   position: static;
 }
 
