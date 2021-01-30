@@ -39,8 +39,4 @@ export class BannerComponent implements OnInit {
   private close(): void {
     this.banner?.close(CloseReason.UNSPECIFIED);
   }
-
-  private getHeight(): number | undefined {
-    return this.banner?.root.offsetHeight;
-  }
 }
