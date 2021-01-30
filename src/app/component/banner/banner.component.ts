@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { MDCBanner } from '@material/banner';
 import { BannerService } from '../../service/banner/banner.service';
 import { CloseReason } from '@material/banner/constants';
-import { AppService } from '../../service/app/app.service';
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -15,10 +14,7 @@ export class BannerComponent implements OnInit {
   text: string;
   icon: string;
 
-  constructor(
-    private bannerService: BannerService,
-    private appService: AppService
-  ) {
+  constructor(private bannerService: BannerService) {
     this.banner = null;
     this.text = 'text';
     this.icon = 'info';
@@ -32,13 +28,6 @@ export class BannerComponent implements OnInit {
       this.open(value.text, value.icon)
     );
     this.bannerService.closeSubject.subscribe(() => this.close());
-
-    this.banner.listen('MDCBanner:opened', () =>
-      this.appService.marginTopForBannerSubject.next(this.getHeight())
-    );
-    this.banner.listen('MDCBanner:closed', () =>
-      this.appService.marginTopForBannerSubject.next(this.getHeight())
-    );
   }
 
   private open(text: string, icon: string): void {

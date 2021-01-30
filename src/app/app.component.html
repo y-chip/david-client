@@ -1,23 +1,13 @@
 <div fxLayout="column" class="container">
-  <mat-toolbar
-    color="primary"
-    [style.position]="isSmallDisplay() ? 'fixed' : 'static' // stay on top when scroll"
-    class="mat-elevation-z6"
-  >
+  <mat-toolbar color="primary" class="mat-elevation-z6">
     <button mat-icon-button (click)="sidenav.toggle()">
       <mat-icon>menu</mat-icon>
     </button>
     <h1 class="app-name">David</h1>
   </mat-toolbar>
 
-  <mat-sidenav-container
-    [style.marginTop.px]="isSmallDisplay() ? 56 : 0 // for position fixed"
-    [fxFlex]="
-      isSmallDisplay()
-        ? '1 0 auto'
-        : '1 1 0' // decide scrolling element <body> or <mat-sidenav-content>
-    "
-  >
+  <dvd-banner></dvd-banner>
+  <mat-sidenav-container fxFlex="1 1 0">
     <mat-sidenav
       #sidenav
       [mode]="isSmallDisplay() ? 'over' : 'side'"
@@ -32,8 +22,7 @@
     </mat-sidenav>
 
     <mat-sidenav-content>
-      <dvd-banner></dvd-banner>
-      <router-outlet [style.marginTop.px]="marginTopForBanner"></router-outlet>
+      <router-outlet></router-outlet>
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>
